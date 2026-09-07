@@ -1,0 +1,17 @@
+{
+  "concurrency": 5,
+  "error_counts": {},
+  "evidence_class": "REFERENCE_BOUNDED_HTTP_LOAD_SMOKE_NOT_CAPACITY_CERTIFICATION",
+  "expected_status": 200,
+  "latency_seconds": {
+    "max": 0.308856,
+    "p50": 0.028211,
+    "p95": 0.306486
+  },
+  "requests": 20,
+  "status": "PASS",
+  "status_counts": {
+    "200": 20
+  },
+  "url": "http://127.0.0.1:8001/api/health"
+}

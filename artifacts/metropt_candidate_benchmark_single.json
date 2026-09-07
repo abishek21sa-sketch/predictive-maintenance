@@ -1,0 +1,49 @@
+{
+  "dataset_root": "data\\external\\metropt3",
+  "gate_boundary": "Results are exploratory until the production preparation path records them. Promotion still requires validation and future-holdout AP above prevalence, ROC-AUC above chance, Brier loss better than the constant-prevalence baseline, event/block-clustered 95% bootstrap bounds supporting those comparisons, and at least two independent published failure windows in each evaluation period.",
+  "partition": {
+    "fit_before": "2020-06-01 00:00:00",
+    "holdout_from": "2020-07-01 00:00:00",
+    "shuffle": false,
+    "validation": "2020-06-01 00:00:00 to 2020-07-01 00:00:00"
+  },
+  "results": [
+    {
+      "anomaly_score_only": {
+        "holdout": {
+          "average_precision": 0.1145653542822641,
+          "brier": null,
+          "prevalence": 0.013907642452065893,
+          "prevalence_brier": 0.013714219933491388,
+          "roc_auc": 0.917960300927003
+        },
+        "validation": {
+          "average_precision": 0.025621208448680766,
+          "brier": null,
+          "prevalence": 0.04231560387893035,
+          "prevalence_brier": 0.04052499354729181,
+          "roc_auc": 0.2452205004943575
+        }
+      }
+    },
+    {
+      "feature_count": 8,
+      "holdout": {
+        "average_precision": 0.011891051590270471,
+        "brier": 0.348861457888907,
+        "prevalence": 0.013907642452065893,
+        "prevalence_brier": 0.013714219933491388,
+        "roc_auc": 0.45521390996385314
+      },
+      "name": "logistic_baseline_plus_anomaly",
+      "validation": {
+        "average_precision": 0.02868661744421285,
+        "brier": 0.32340911506996944,
+        "prevalence": 0.04231560387893035,
+        "prevalence_brier": 0.04052499354729181,
+        "roc_auc": 0.3296086052299615
+      }
+    }
+  ],
+  "target": "failure_within_24h"
+}

@@ -1,0 +1,149 @@
+{
+  "blockers": [
+    "production_auth",
+    "managed_state_backend",
+    "tls_termination",
+    "observability",
+    "backup_and_restore",
+    "site_connector",
+    "change_control",
+    "prospective_field_validation"
+  ],
+  "checks": {
+    "backup_and_restore": {
+      "components_declared": {
+        "policy": false,
+        "restore_test": false,
+        "target": false
+      },
+      "ready": false,
+      "requirement": "backup policy, backup target, current timezone-aware restore test, and deployment evidence are present"
+    },
+    "change_control": {
+      "ready": false,
+      "requirement": "release ID, deployed artifact SHA-256, approved change ticket status, and deployment evidence are recorded"
+    },
+    "managed_state_backend": {
+      "configuration_valid": false,
+      "configured_scheme": null,
+      "configured_url": null,
+      "connectivity": {
+        "reason": "set PDM_READINESS_PROBE_DATABASE=1 to require a bounded live connectivity check",
+        "status": "NOT_RUN"
+      },
+      "ready": false,
+      "requirement": "managed multi-user SQLAlchemy adapter, supported PDM_DATABASE_URL, PDM_MANAGED_STATE_ADAPTER=sqlalchemy, live connectivity probe, and deployment evidence",
+      "runtime": {
+        "backend": "sqlite",
+        "ready": false,
+        "reason": "application_state_runtime_is_local_sqlite_only",
+        "status": "REFERENCE_ONLY"
+      },
+      "schema": {
+        "reason": "managed schema check requires a passing live connectivity probe",
+        "status": "NOT_RUN",
+        "stores": []
+      }
+    },
+    "observability": {
+      "components_declared": {
+        "alert_routing": false,
+        "log_sink": false,
+        "metrics_exporter": false,
+        "trace_exporter": false
+      },
+      "ready": false,
+      "requirement": "PDM_OBSERVABILITY_ENABLED plus metrics exporter, log sink, trace exporter, alert routing, and deployment evidence"
+    },
+    "production_auth": {
+      "configuration": {
+        "configured": false,
+        "duplicate_key_entries": 0,
+        "entry_count": 0,
+        "invalid_entries": 0,
+        "minimum_key_length": 32,
+        "ready": false,
+        "valid_entries": 0,
+        "weak_key_entries": 0
+      },
+      "ready": false,
+      "requirement": "PDM_AUTH_MODE=production, valid PDM_API_KEYS from a declared secret provider, a current secret-rotation policy/test, and deployment evidence attestation",
+      "secret_rotation": {
+        "last_test": false,
+        "policy": false
+      }
+    },
+    "prospective_field_validation": {
+      "evidence": {
+        "errors": [
+          "evidence_file_not_configured"
+        ],
+        "qualification_status": null,
+        "site_id": null,
+        "status": "MISSING",
+        "study_id": null
+      },
+      "ready": false,
+      "requirement": "release-bound prospective field evidence with completed follow-up, reconciled outcomes, safety review, operator acceptance, and a non-secret evidence attestation"
+    },
+    "site_connector": {
+      "components_declared": {
+        "connector_endpoint": false,
+        "connector_id": false
+      },
+      "ready": false,
+      "requirement": "a site-specific CMMS/ERP connector ID and endpoint are configured and attested"
+    },
+    "tls_termination": {
+      "ready": false,
+      "requirement": "TLS termination is enabled at the trusted ingress boundary, identified by PDM_TLS_INGRESS_ID, and attested"
+    }
+  },
+  "claim_boundary": "This report checks non-secret configuration declarations, bounded managed-state connectivity, structured deployment and field-qualification attestations. It does not certify infrastructure, cybersecurity, compliance, availability, model performance, or field safety.",
+  "deployment_evidence": {
+    "binding": {
+      "errors": [
+        "runtime_release_id_not_configured",
+        "runtime_environment_not_configured",
+        "runtime_artifact_digest_not_configured"
+      ],
+      "evidence_artifact_sha256": null,
+      "evidence_environment": null,
+      "evidence_release_id": null,
+      "ready": false,
+      "runtime_artifact_sha256": null,
+      "runtime_environment": null,
+      "runtime_release_id": null
+    },
+    "errors": [
+      "evidence_file_not_configured"
+    ],
+    "evidence_digest": null,
+    "status": "MISSING",
+    "verified_controls": []
+  },
+  "evidence_class": "CONFIGURATION_AND_ATTESTATION_NOT_DEPLOYMENT_CERTIFICATION",
+  "field_qualification_evidence": {
+    "binding": {
+      "errors": [
+        "runtime_release_id_not_configured",
+        "runtime_environment_not_configured",
+        "runtime_artifact_digest_not_configured"
+      ],
+      "evidence_artifact_sha256": null,
+      "evidence_environment": null,
+      "evidence_release_id": null,
+      "ready": false,
+      "runtime_artifact_sha256": null,
+      "runtime_environment": null,
+      "runtime_release_id": null
+    },
+    "errors": [
+      "evidence_file_not_configured"
+    ],
+    "evidence_class": "PROSPECTIVE_FIELD_QUALIFICATION_ATTESTATION_NOT_CERTIFICATION",
+    "evidence_digest": null,
+    "status": "MISSING"
+  },
+  "status": "NOT_READY"
+}

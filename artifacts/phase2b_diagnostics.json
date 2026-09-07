@@ -1,0 +1,21 @@
+{
+  "phase": "2B-regression",
+  "overall": "PASS",
+  "checks": {
+    "case_selection_api": true,
+    "asset_dossier_api": true,
+    "intervention_options_api": true,
+    "commitment_optimization_feasible": true,
+    "honest_trace_label": true
+  },
+  "selected_asset": 34,
+  "solver": {
+    "solver": "scipy_highs_milp",
+    "status": "OPTIMAL",
+    "objective_value": 782869.7911446257,
+    "best_bound": null,
+    "mip_gap": 0.0,
+    "solve_time_seconds": 0.00962849699999424,
+    "termination_reason": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+  }
+}

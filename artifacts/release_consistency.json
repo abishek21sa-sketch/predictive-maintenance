@@ -1,0 +1,19 @@
+{
+  "checked_sources": [
+    "src/pdm_intelligence/release/fd001_model_metadata.json",
+    "artifacts/reports/fd001_release_evidence.json",
+    "artifacts/reports/fd001_benchmark.json",
+    "artifacts/reports/fd001_operational_snapshot.json",
+    "RELEASE_MANIFEST.json"
+  ],
+  "claim_boundary": "This gate verifies evidence lineage and publication consistency. It does not certify model quality, field reliability, or production readiness.",
+  "errors": [],
+  "official_test_metrics": {
+    "mae": 14.173246296617776,
+    "nasa_score": 735.9326787007708,
+    "r2": 0.7857137399260353,
+    "rmse": 19.236538883578387
+  },
+  "selected_model": "hist_gradient_boosting",
+  "status": "PASS"
+}

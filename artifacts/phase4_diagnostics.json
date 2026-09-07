@@ -1,0 +1,102 @@
+{
+  "phase": 4,
+  "version": "1.0.0",
+  "overall": "PASS",
+  "evidence_class": "MATHEMATICALLY_VERIFIED_OR_AND_SEEDED_STRESS_SIMULATION",
+  "checks": {
+    "cvar_milp_matches_exact_oracle": true,
+    "uncertainty_aware_plan_optimal": true,
+    "cvar_not_below_expected": true,
+    "robust_capacity_profiles_present": true,
+    "critical_assets_not_silently_deferred": true,
+    "multiple_intervention_types_selected": true,
+    "stress_simulation_reproducible": true,
+    "common_random_numbers": true,
+    "stress_policy_set_complete": true,
+    "phase4_api_smoke": true,
+    "stress_lab_and_methodology": true
+  },
+  "oracle": {
+    "enumeration_objective": 21057.176065097694,
+    "milp_objective": 21057.176065097694
+  },
+  "decision_plan": {
+    "solver": {
+      "solver": "scipy_highs_milp",
+      "status": "OPTIMAL",
+      "objective_value": 775589.2533704643,
+      "best_bound": null,
+      "mip_gap": 0.0,
+      "solve_time_seconds": 0.047401715999967564,
+      "termination_reason": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+    },
+    "risk": {
+      "expected_cost": 672246.5865471689,
+      "cvar_alpha": 0.9,
+      "cvar_cost": 688951.1121553022,
+      "risk_aversion": 0.15,
+      "objective_value": 775589.2533704642,
+      "scenario_costs": [
+        666099.9283866466,
+        683083.0868547503,
+        655108.9193617073,
+        675027.0867331532,
+        679601.2020396802,
+        678248.4727706783,
+        673690.2416883673,
+        650409.2289342358,
+        688951.1121553022
+      ],
+      "scenario_probabilities": [
+        0.1111111111111111,
+        0.1111111111111111,
+        0.1111111111111111,
+        0.1111111111111111,
+        0.1111111111111111,
+        0.1111111111111111,
+        0.1111111111111111,
+        0.1111111111111111,
+        0.1111111111111111
+      ]
+    },
+    "action_counts": {
+      "inspect": 8,
+      "maintain": 4,
+      "defer": 6
+    },
+    "capacity_profiles": [
+      "baseline",
+      "bay_and_crew_stress"
+    ]
+  },
+  "stress_results": [
+    {
+      "policy": "optimized_intervention",
+      "expected_total_cost": 59830.435961868476,
+      "p95_total_cost": 62678.99438854077,
+      "expected_failures": 0.05,
+      "expected_downtime_cycles": 13.131613301557058,
+      "expected_disrupted_interventions": 2.4,
+      "on_time_intervention_rate": 0.8
+    },
+    {
+      "policy": "earliest_rul_heuristic",
+      "expected_total_cost": 392035.0546991719,
+      "p95_total_cost": 516033.59933572967,
+      "expected_failures": 5.8875,
+      "expected_downtime_cycles": 70.16462891597662,
+      "expected_disrupted_interventions": 4.40625,
+      "on_time_intervention_rate": 0.5315972222222223
+    },
+    {
+      "policy": "run_to_failure",
+      "expected_total_cost": 885171.0540901428,
+      "p95_total_cost": 900737.4213530413,
+      "expected_failures": 18.0,
+      "expected_downtime_cycles": 107.64254507511892,
+      "expected_disrupted_interventions": 0.0,
+      "on_time_intervention_rate": 0.0
+    }
+  ],
+  "claim_boundary": "Optimization and stress-test quantities are modeled/simulated outcomes, not realized field savings."
+}

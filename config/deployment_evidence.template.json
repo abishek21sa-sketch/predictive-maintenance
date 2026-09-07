@@ -1,0 +1,52 @@
+{
+  "schema_version": "PDM-DEPLOYMENT-EVIDENCE.v2",
+  "release_id": "<release-id>",
+  "environment": "<environment>",
+  "artifact_sha256": "<lowercase-sha256-of-deployed-release-zip>",
+  "attested_by": "<operator-or-team>",
+  "attested_at": "<RFC3339-timestamp>",
+  "controls": {
+    "production_auth": {
+      "status": "unverified",
+      "owner": "<security-owner>",
+      "verified_at": "<RFC3339-timestamp>",
+      "evidence_ref": "vault://<secret-manager-record>"
+    },
+    "managed_state_backend": {
+      "status": "unverified",
+      "owner": "<platform-owner>",
+      "verified_at": "<RFC3339-timestamp>",
+      "evidence_ref": "change://<database-adapter-record>"
+    },
+    "tls_termination": {
+      "status": "unverified",
+      "owner": "<network-owner>",
+      "verified_at": "<RFC3339-timestamp>",
+      "evidence_ref": "ingress://<tls-record>"
+    },
+    "observability": {
+      "status": "unverified",
+      "owner": "<sre-owner>",
+      "verified_at": "<RFC3339-timestamp>",
+      "evidence_ref": "monitoring://<dashboard-and-alert-record>"
+    },
+    "backup_and_restore": {
+      "status": "unverified",
+      "owner": "<sre-owner>",
+      "verified_at": "<RFC3339-timestamp>",
+      "evidence_ref": "dr://<restore-test-record>"
+    },
+    "site_connector": {
+      "status": "unverified",
+      "owner": "<operations-owner>",
+      "verified_at": "<RFC3339-timestamp>",
+      "evidence_ref": "cmms://<site-connector-record>"
+    },
+    "change_control": {
+      "status": "unverified",
+      "owner": "<release-owner>",
+      "verified_at": "<RFC3339-timestamp>",
+      "evidence_ref": "change://<approved-change-record>"
+    }
+  }
+}

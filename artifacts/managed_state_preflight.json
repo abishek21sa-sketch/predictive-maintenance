@@ -1,0 +1,14 @@
+{
+  "claim_boundary": "A successful connectivity check is not a production certification or disaster-recovery test.",
+  "descriptor": {
+    "backend": "managed",
+    "database": "pdm",
+    "host": "db.example",
+    "port": null,
+    "reason": "supported_managed_sqlalchemy_url",
+    "redacted_url": "postgresql+psycopg://db.example/pdm",
+    "scheme": "postgresql+psycopg",
+    "valid": true
+  },
+  "status": "PASS_CONFIGURATION_ONLY"
+}

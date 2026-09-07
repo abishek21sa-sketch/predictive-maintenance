@@ -1,0 +1,43 @@
+{
+  "release": "1.0.0",
+  "overall": "PASS",
+  "evidence_class": "V1_RELEASE_INTEGRATION_DIAGNOSTIC",
+  "checks": {
+    "package_version_1_0_0": true,
+    "api_health_v1": true,
+    "pyproject_v1": true,
+    "readme_v1": true,
+    "bundled_fd001_snapshot_100_assets": true,
+    "all_primary_pages_200": true,
+    "external_data_modes_ready": true,
+    "decision_plan_optimal": true,
+    "decision_cvar_valid": true,
+    "stress_three_policy_set": true,
+    "methodology_three_policy_evidence": true,
+    "methodology_real_data_track_separated": true,
+    "technical_methods_required_sections": true,
+    "raw_nasa_data_not_packaged": true,
+    "raw_metropt_not_packaged": true
+  },
+  "api": {
+    "health": 200,
+    "portfolio": 200,
+    "data_modes": 200,
+    "decision_plan": 200,
+    "stress_test": 200,
+    "pages": {
+      "/": 200,
+      "/data-gateway": 200,
+      "/operations": 200,
+      "/stress-lab": 200,
+      "/methodology": 200
+    }
+  },
+  "stress_policies": [
+    "earliest_rul_heuristic",
+    "optimized_intervention",
+    "run_to_failure"
+  ],
+  "local_metropt_raw_present": true,
+  "claim_boundary": "V1.0 release integration is validated; prospective field performance remains external validation."
+}

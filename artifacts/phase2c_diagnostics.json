@@ -1,0 +1,26 @@
+{
+  "phase": "2C",
+  "overall": "PASS",
+  "checks": {
+    "observatory_home": true,
+    "frontend_assets_bundled": true,
+    "html_cache_disabled": true,
+    "old_dashboard_composition_removed": true,
+    "case_lens_api": true,
+    "three_intervention_paths": true,
+    "schedule_clock_infeasibility_detected": true,
+    "schedule_clock_plan_feasible": true,
+    "methodology_page": true,
+    "honest_evidence_language": true
+  },
+  "selected_asset": 34,
+  "solver": {
+    "solver": "scipy_highs_milp",
+    "status": "OPTIMAL",
+    "objective_value": 1115378.7056250868,
+    "best_bound": null,
+    "mip_gap": 0.0,
+    "solve_time_seconds": 0.009156541999914225,
+    "termination_reason": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+  }
+}

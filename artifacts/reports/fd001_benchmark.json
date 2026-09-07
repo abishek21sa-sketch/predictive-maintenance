@@ -1,0 +1,125 @@
+{
+  "dataset": "NASA C-MAPSS FD001",
+  "train_rows": 20631,
+  "test_rows": 13096,
+  "train_units": 100,
+  "test_units": 100,
+  "selected_model": "hist_gradient_boosting",
+  "asset_holdout_metrics": {
+    "mae": 9.669682107364816,
+    "rmse": 14.601635565822043,
+    "r2": 0.8780106984693109,
+    "nasa_score": 27343.06993839595
+  },
+  "official_test_metrics": {
+    "mae": 14.173246296617776,
+    "rmse": 19.236538883578387,
+    "r2": 0.7857137399260353,
+    "nasa_score": 735.9326787007708
+  },
+  "official_test_baseline_metrics": {
+    "mae": 27.585332993075372,
+    "rmse": 33.335540173853424,
+    "r2": 0.35648977856660646,
+    "nasa_score": 5318.920983684369
+  },
+  "official_test_metric_intervals": {
+    "bootstrap_unit": "asset_trajectory",
+    "confidence_level": 0.95,
+    "group_count": 100,
+    "iterations": 2000,
+    "status": "PASS",
+    "intervals": {
+      "mae": {
+        "low": 11.663774700446748,
+        "median": 14.13809426458026,
+        "high": 16.86084961066505
+      },
+      "rmse": {
+        "low": 16.162855340163606,
+        "median": 19.192468697157757,
+        "high": 22.213197917720603
+      },
+      "r2": {
+        "low": 0.6951608998600957,
+        "median": 0.784923826018264,
+        "high": 0.8519944374608344
+      },
+      "nasa_score": {
+        "low": 422.4115857665113,
+        "median": 710.5590989288872,
+        "high": 1158.2621423924402
+      },
+      "interval_coverage": {
+        "low": 0.77,
+        "median": 0.84,
+        "high": 0.91
+      }
+    },
+    "claim_boundary": "Asset-grouped bootstrap intervals quantify benchmark uncertainty; they do not certify field reliability, causal benefit, or calibrated prediction coverage."
+  },
+  "rul_interval_evidence": {
+    "half_width_cycles": 25.981409777266137,
+    "validation_coverage_90": 0.8998361327324866,
+    "official_test_coverage_90": 0.84,
+    "claim_boundary": "This is an empirical symmetric residual band estimated from the asset holdout. It is not a formal conformal-coverage guarantee."
+  },
+  "top_features": [
+    {
+      "feature": "cycle",
+      "importance": 8.004601550097561
+    },
+    {
+      "feature": "sensor_11_roll_mean",
+      "importance": 2.9912924137260397
+    },
+    {
+      "feature": "sensor_09_roll_mean",
+      "importance": 2.512131143284826
+    },
+    {
+      "feature": "sensor_04_roll_mean",
+      "importance": 1.836327539844854
+    },
+    {
+      "feature": "sensor_14_roll_mean",
+      "importance": 1.1958536039237462
+    },
+    {
+      "feature": "sensor_15_roll_mean",
+      "importance": 1.1058620104202994
+    },
+    {
+      "feature": "sensor_02_roll_mean",
+      "importance": 0.600326516160159
+    },
+    {
+      "feature": "sensor_03_roll_mean",
+      "importance": 0.5098917103244194
+    },
+    {
+      "feature": "sensor_21_roll_mean",
+      "importance": 0.38474009204168524
+    },
+    {
+      "feature": "sensor_06_roll_std",
+      "importance": 0.34702878416950256
+    },
+    {
+      "feature": "sensor_13_roll_mean",
+      "importance": 0.198545393512072
+    },
+    {
+      "feature": "sensor_12_roll_mean",
+      "importance": 0.18803194965846082
+    }
+  ],
+  "source_reference": "https://data.nasa.gov/dataset/cmapss-jet-engine-simulated-data",
+  "raw_data_policy": "public benchmark retained locally; raw files excluded from release artifacts",
+  "checksums": {
+    "train_FD001.txt": "963b5e22825b34d8b21c69e1aeb4af3e647050eb672ee8834ba4b5d91d2de0f8",
+    "test_FD001.txt": "3cda7109ce17bafb5443f2ac926cfcf88154b941b8c4cf95eb55d1ddd6f52851",
+    "RUL_FD001.txt": "a19c8ec94931949d0485bdc35118206e9c81c4547b422efb9cf86f4ceddbceca"
+  },
+  "seed": 42
+}

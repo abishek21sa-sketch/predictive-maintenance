@@ -1,0 +1,307 @@
+{
+  "decision": {
+    "decision_id": "BELIEF-F39CB6FCB7AF69D6",
+    "algorithm": "BELIEF-MAINT",
+    "gate": "AUTHORIZED",
+    "human_review_required": true,
+    "evidence_class": "synthetic Markov/MILP formulation validation",
+    "parameters": {
+      "transition_stress": 1.0,
+      "crew_capacity": 1,
+      "opportunity_cost_scale": 1.0
+    },
+    "checks": {
+      "solver_optimal": true,
+      "transition_rows_stochastic": true,
+      "belief_histories_valid": true,
+      "crew_capacity_respected": true,
+      "objective_not_worse_than_baselines": true,
+      "claim_boundary_present": true
+    },
+    "result": {
+      "algorithm": "BELIEF-MAINT",
+      "status": "OPTIMAL",
+      "solver": "SciPy-HiGHS MILP",
+      "objective_value": 178800.393854464,
+      "schedule": [
+        {
+          "asset_id": 104,
+          "maintenance_cycle": 1,
+          "failure_probability_at_maintenance": 0.22740000000000002,
+          "cumulative_failure_exposure": 0.22740000000000002,
+          "opportunity_cost": 5500.0,
+          "modeled_cost": 19568.6
+        },
+        {
+          "asset_id": 101,
+          "maintenance_cycle": 2,
+          "failure_probability_at_maintenance": 0.566168,
+          "cumulative_failure_exposure": 0.938768,
+          "opportunity_cost": 1500.0,
+          "modeled_cost": 46428.256
+        },
+        {
+          "asset_id": 102,
+          "maintenance_cycle": 3,
+          "failure_probability_at_maintenance": 0.39565892,
+          "cumulative_failure_exposure": 0.8075059200000001,
+          "opportunity_cost": 6000.0,
+          "modeled_cost": 40070.21312
+        },
+        {
+          "asset_id": 103,
+          "maintenance_cycle": 4,
+          "failure_probability_at_maintenance": 0.3585100096,
+          "cumulative_failure_exposure": 0.8653717696000001,
+          "opportunity_cost": 5000.0,
+          "modeled_cost": 37491.8966272
+        },
+        {
+          "asset_id": 105,
+          "maintenance_cycle": 5,
+          "failure_probability_at_maintenance": 0.378922393088,
+          "cumulative_failure_exposure": 1.047908146688,
+          "opportunity_cost": 1400.0,
+          "modeled_cost": 35241.428107264
+        }
+      ],
+      "transition_matrix": [
+        [
+          0.84,
+          0.13,
+          0.03,
+          0.0
+        ],
+        [
+          0.0,
+          0.64,
+          0.27,
+          0.09
+        ],
+        [
+          0.0,
+          0.0,
+          0.56,
+          0.44
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "horizon": 6,
+      "crew_capacity_by_cycle": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "claim_boundary": "BELIEF-MAINT is a model-based maintenance-timing decision under declared degradation transitions, costs and crew capacity. Belief transitions are not causal proof and the schedule is not a guaranteed failure-prevention outcome."
+    },
+    "baselines": {
+      "fixed_interval": {
+        "maintenance_cycle_by_asset": {
+          "101": 4,
+          "102": 3,
+          "103": 5,
+          "104": 2,
+          "105": 6
+        },
+        "objective_value": 280566.2052216525
+      },
+      "risk_rank": {
+        "maintenance_cycle_by_asset": {
+          "101": 1,
+          "104": 2,
+          "102": 3,
+          "103": 4,
+          "105": 5
+        },
+        "objective_value": 183740.85385446402
+      },
+      "lowest_production_load": {
+        "maintenance_cycle_by_asset": {
+          "101": 2,
+          "102": 1,
+          "103": 3,
+          "104": 4,
+          "105": 6
+        },
+        "objective_value": 204342.63759490047
+      }
+    },
+    "belief_summary": [
+      {
+        "asset_id": 101,
+        "initial": {
+          "healthy": 0.08,
+          "degraded": 0.22,
+          "critical": 0.62,
+          "failed": 0.08
+        },
+        "horizon_end": {
+          "healthy": 0.028103842529279992,
+          "degraded": 0.029812369735679994,
+          "critical": 0.05941392214016001,
+          "failed": 0.8826698655948799
+        },
+        "failed_probability_path": [
+          0.08,
+          0.3726,
+          0.566168,
+          0.69529056,
+          0.7822982528,
+          0.841635687936,
+          0.8826698655948799
+        ]
+      },
+      {
+        "asset_id": 102,
+        "initial": {
+          "healthy": 0.35,
+          "degraded": 0.45,
+          "critical": 0.18,
+          "failed": 0.02
+        },
+        "horizon_end": {
+          "healthy": 0.12295431106559998,
+          "degraded": 0.09521038576640001,
+          "critical": 0.11631316562688,
+          "failed": 0.6655221375411199
+        },
+        "failed_probability_path": [
+          0.02,
+          0.1397,
+          0.27214700000000003,
+          0.39565892,
+          0.5026840592,
+          0.592122619712,
+          0.6655221375411199
+        ]
+      },
+      {
+        "asset_id": 103,
+        "initial": {
+          "healthy": 0.6,
+          "degraded": 0.3,
+          "critical": 0.09,
+          "failed": 0.01
+        },
+        "horizon_end": {
+          "healthy": 0.2107788189696,
+          "degraded": 0.130821479424,
+          "critical": 0.13238564649984003,
+          "failed": 0.5260140551065601
+        },
+        "failed_probability_path": [
+          0.01,
+          0.0766,
+          0.166636,
+          0.26362576,
+          0.3585100096,
+          0.44665294873600003,
+          0.5260140551065601
+        ]
+      },
+      {
+        "asset_id": 104,
+        "initial": {
+          "healthy": 0.2,
+          "degraded": 0.42,
+          "critical": 0.34,
+          "failed": 0.04
+        },
+        "horizon_end": {
+          "healthy": 0.0702596063232,
+          "degraded": 0.06559739236352001,
+          "critical": 0.09459802952704002,
+          "failed": 0.7695449717862399
+        },
+        "failed_probability_path": [
+          0.04,
+          0.22740000000000002,
+          0.39024400000000004,
+          0.52276464,
+          0.6270145984,
+          0.7076334743039999,
+          0.7695449717862399
+        ]
+      },
+      {
+        "asset_id": 105,
+        "initial": {
+          "healthy": 0.72,
+          "degraded": 0.22,
+          "critical": 0.05,
+          "failed": 0.01
+        },
+        "horizon_end": {
+          "healthy": 0.25293458276352,
+          "degraded": 0.14736504856576,
+          "critical": 0.13917640902656003,
+          "failed": 0.46052395964416004
+        },
+        "failed_probability_path": [
+          0.01,
+          0.0518,
+          0.12085600000000002,
+          0.20412128000000002,
+          0.2922084736,
+          0.378922393088,
+          0.46052395964416004
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "action": "SCHEDULE_MAINTENANCE_REVIEW",
+        "asset_id": 104,
+        "cycle": 1,
+        "failure_probability_at_maintenance": 0.22740000000000002,
+        "modeled_cost": 19568.6
+      },
+      {
+        "action": "SCHEDULE_MAINTENANCE_REVIEW",
+        "asset_id": 101,
+        "cycle": 2,
+        "failure_probability_at_maintenance": 0.566168,
+        "modeled_cost": 46428.256
+      },
+      {
+        "action": "SCHEDULE_MAINTENANCE_REVIEW",
+        "asset_id": 102,
+        "cycle": 3,
+        "failure_probability_at_maintenance": 0.39565892,
+        "modeled_cost": 40070.21312
+      },
+      {
+        "action": "SCHEDULE_MAINTENANCE_REVIEW",
+        "asset_id": 103,
+        "cycle": 4,
+        "failure_probability_at_maintenance": 0.3585100096,
+        "modeled_cost": 37491.8966272
+      },
+      {
+        "action": "SCHEDULE_MAINTENANCE_REVIEW",
+        "asset_id": 105,
+        "cycle": 5,
+        "failure_probability_at_maintenance": 0.378922393088,
+        "modeled_cost": 35241.428107264
+      }
+    ],
+    "operator_note": "AUTHORIZED means the modeled belief-state schedule passed formulation and evidence checks. It does not autonomously create work orders or override maintenance engineering review."
+  },
+  "product_checks": {
+    "gate_authorized": true,
+    "human_review_required": true,
+    "all_model_checks_pass": true,
+    "actions_present": true,
+    "belief_lineage_present": true,
+    "three_baselines_present": true,
+    "evidence_class_bounded": true
+  }
+}

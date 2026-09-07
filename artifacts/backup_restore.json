@@ -1,0 +1,22 @@
+{
+  "backup_fingerprint": {
+    "integrity_check": "ok",
+    "rows:approval_records": 0,
+    "rows:audit_events": 26,
+    "rows:external_datasets": 1,
+    "rows:external_models": 0,
+    "rows:work_orders": 1
+  },
+  "destination": "C:\\Users\\babbi\\AppData\\Local\\Temp\\pdm-backup-1168c9f22e534b2090b8e4e688c0ceff\\pdm.db",
+  "evidence_class": "REFERENCE_LOCAL_BACKUP_RESTORE_NOT_DR_EVIDENCE",
+  "source": "C:\\Users\\babbi\\Documents\\Codex\\predictive_maintenance\\data\\pdm.db",
+  "source_fingerprint": {
+    "integrity_check": "ok",
+    "rows:approval_records": 0,
+    "rows:audit_events": 26,
+    "rows:external_datasets": 1,
+    "rows:external_models": 0,
+    "rows:work_orders": 1
+  },
+  "status": "PASS_REFERENCE_ONLY"
+}

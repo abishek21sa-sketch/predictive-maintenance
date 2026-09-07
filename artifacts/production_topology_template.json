@@ -1,0 +1,29 @@
+{
+  "claim_boundary": "This validates Kubernetes topology and fail-closed wiring only. It does not certify a cluster, secret manager, managed database, TLS ingress, observability, recovery, connector, change approval, model performance, or field safety.",
+  "errors": [],
+  "external_replacements_required": [
+    "REPLACE_WITH_1_AFTER_TRUSTED_INGRESS_ENABLED",
+    "REPLACE_WITH_ALERT_ROUTING_REFERENCE",
+    "REPLACE_WITH_APPROVED",
+    "REPLACE_WITH_APPROVED_CHANGE_TICKET",
+    "REPLACE_WITH_APPROVED_SECRET_PROVIDER",
+    "REPLACE_WITH_BACKUP_POLICY_REFERENCE",
+    "REPLACE_WITH_BACKUP_TARGET_REFERENCE",
+    "REPLACE_WITH_HTTPS_SITE_CONNECTOR_ENDPOINT",
+    "REPLACE_WITH_LOG_SINK_REFERENCE",
+    "REPLACE_WITH_METRICS_EXPORTER_REFERENCE",
+    "REPLACE_WITH_PRODUCTION_HOSTNAME",
+    "REPLACE_WITH_RELEASE_ARTIFACT_SHA256",
+    "REPLACE_WITH_RFC3339_RESTORE_TEST_TIME",
+    "REPLACE_WITH_RFC3339_ROTATION_TEST_TIME",
+    "REPLACE_WITH_ROTATION_POLICY_REFERENCE",
+    "REPLACE_WITH_SITE_CONNECTOR_ID",
+    "REPLACE_WITH_TRACE_EXPORTER_REFERENCE",
+    "REPLACE_WITH_TRUSTED_INGRESS_CLASS",
+    "REPLACE_WITH_TRUSTED_INGRESS_ID",
+    "REPLACE_WITH_TRUSTED_TLS_SECRET",
+    "registry.example.com/pdm/predictive-maintenance@sha256:REPLACE_WITH_IMAGE_DIGEST"
+  ],
+  "manifest": "C:\\Users\\babbi\\Documents\\Codex\\predictive_maintenance\\deploy\\kubernetes\\pdm-platform.json",
+  "status": "PASS_TEMPLATE"
+}

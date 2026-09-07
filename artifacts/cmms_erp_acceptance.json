@@ -1,0 +1,19 @@
+﻿{
+    "status":  "PASS",
+    "generated_at_utc":  "2026-09-04T15:24:48.3854734Z",
+    "contract_versions":  [
+                              "CMMS-WORK-ORDER.v1",
+                              "CMMS-INVENTORY.v1"
+                          ],
+    "test_file":  "tests/test_cmms_integration.py",
+    "security_properties":  [
+                                "permission-gated API writes",
+                                "deterministic fingerprints and batch IDs",
+                                "stale/conflict non-overwrite policy",
+                                "atomic mirror and audit-event commit",
+                                "audit-linked reconciliation and export",
+                                "SHA-256 export-content integrity header",
+                                "contract-only exchange payloads"
+                            ],
+    "claim_boundary":  "Exchange records are not proof of field maintenance or physical stock."
+}

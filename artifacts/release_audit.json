@@ -1,0 +1,37 @@
+{
+  "checks": {
+    "gitignore_release_safety": true,
+    "managed_container_boundary": true,
+    "no_forbidden_secret_files": true,
+    "no_raw_metropt_data_redistributed": true,
+    "no_raw_nasa_data_redistributed": true,
+    "no_secret_patterns": true,
+    "no_stale_root_release_files": true,
+    "required_release_files_present": true
+  },
+  "container": {
+    "container_healthcheck_uses_readiness": true,
+    "managed_password_is_parameterized": true,
+    "managed_postgres_service_present": true,
+    "managed_runtime_selects_adapter": true
+  },
+  "findings": [],
+  "forbidden_files": [],
+  "gitignore": {
+    "env_ignored": true,
+    "external_data_ignored": true,
+    "gurobi_license_ignored": true,
+    "venv_ignored": true
+  },
+  "metropt_raw_files": [
+    "data/external/metropt3/raw/MetroPT3(AirCompressor).csv"
+  ],
+  "missing_required": [],
+  "overall": "PASS",
+  "packaged_raw_files": [],
+  "raw_files": [
+    "data/raw/CMAPSSData.zip"
+  ],
+  "release": "1.0.0",
+  "stale_present": []
+}

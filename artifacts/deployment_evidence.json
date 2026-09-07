@@ -1,0 +1,21 @@
+{
+  "status": "INVALID",
+  "evidence_class": "DEPLOYMENT_EVIDENCE_ATTESTATION_NOT_CERTIFICATION",
+  "release_id": "<release-id>",
+  "environment": "<environment>",
+  "attested_by": "<operator-or-team>",
+  "attested_at": "<RFC3339-timestamp>",
+  "verified_controls": [],
+  "errors": [
+    "control_not_verified_production_auth",
+    "control_not_verified_managed_state_backend",
+    "control_not_verified_tls_termination",
+    "control_not_verified_observability",
+    "control_not_verified_backup_and_restore",
+    "control_not_verified_site_connector",
+    "control_not_verified_change_control"
+  ],
+  "evidence_digest": "8d42d504cf65b6681f0e666b0ad28ed0903ce0f14f021de7e3689dd8f1d2b627",
+  "claim_boundary": "This is a non-secret operator attestation for deployment review. It does not certify infrastructure, cybersecurity, availability, compliance, model performance, or field safety.",
+  "path_configured": true
+}

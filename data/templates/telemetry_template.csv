@@ -1,0 +1,4 @@
+asset_id,cycle,timestamp,vibration_rms_mm_s,bearing_temp_c,pressure_bar,rul
+M-001,1,2026-01-01T00:00:00Z,2.10,68.4,8.1,120
+M-001,2,2026-01-01T01:00:00Z,2.16,68.7,8.0,119
+M-002,1,2026-01-01T00:00:00Z,1.72,64.2,8.3,150

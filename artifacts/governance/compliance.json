@@ -1,0 +1,20 @@
+{
+  "project": "Predictive Maintenance",
+  "signature_algorithm": "BELIEF-MAINT",
+  "signature_coverage_percent": 98,
+  "coverage_threshold_percent": 90,
+  "coverage_gate": "PASS",
+  "regression_evidence": "97/97 tests",
+  "evidence_gate": "10/10 formulation; 7/7 product integration; 10 sensitivity + 200 common-cause Monte Carlo replications",
+  "windows_acceptance_command": ".\\scripts\\windows_belief_maint_acceptance.ps1",
+  "windows_execution_status": "PENDING_USER_WINDOWS",
+  "mandatory_engineering_release_status": "PASS_EXCEPT_WINDOWS_EXECUTION",
+  "null_hypotheses": [
+    "H0-P1: BELIEF-MAINT does not reduce modeled maintenance/failure/opportunity cost versus fixed-interval, current-risk-rank, or lowest-load scheduling.",
+    "H0-P2: Probabilistic degradation belief does not materially change maintenance timing relative to deterministic current-risk ordering."
+  ],
+  "evidence_class_discipline": "PASS",
+  "llm_is_decision_engine": false,
+  "human_review_gate_required": true,
+  "research_upgrade_status": "PARTIAL_DEFERRED_NOT_RELEASE_BLOCKING"
+}

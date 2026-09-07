@@ -1,0 +1,545 @@
+{
+  "apiVersion": "v1",
+  "kind": "List",
+  "metadata": {
+    "name": "pdm-platform-production-template"
+  },
+  "items": [
+    {
+      "apiVersion": "v1",
+      "kind": "Namespace",
+      "metadata": {
+        "name": "pdm-production",
+        "labels": {
+          "pod-security.kubernetes.io/enforce": "restricted",
+          "pod-security.kubernetes.io/audit": "restricted",
+          "pod-security.kubernetes.io/warn": "restricted"
+        }
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "ServiceAccount",
+      "metadata": {
+        "name": "pdm-platform",
+        "namespace": "pdm-production"
+      },
+      "automountServiceAccountToken": false
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "ConfigMap",
+      "metadata": {
+        "name": "pdm-platform-config",
+        "namespace": "pdm-production"
+      },
+      "data": {
+        "PDM_AUTH_MODE": "production",
+        "PDM_STATE_BACKEND": "managed",
+        "PDM_MANAGED_STATE_ADAPTER": "sqlalchemy",
+        "PDM_READINESS_PROBE_DATABASE": "1",
+        "PDM_REQUIRE_APPROVED_MODELS": "1",
+        "PDM_OBSERVABILITY_ENABLED": "1",
+        "PDM_DEPLOYMENT_ENVIRONMENT": "production",
+        "PDM_RELEASE_ID": "1.0.0",
+        "PDM_RELEASE_ARTIFACT_SHA256": "REPLACE_WITH_RELEASE_ARTIFACT_SHA256",
+        "PDM_DEPLOYMENT_EVIDENCE_FILE": "/etc/pdm/deployment/evidence.json",
+        "PDM_FIELD_QUALIFICATION_EVIDENCE_FILE": "/etc/pdm/field/qualification.json",
+        "PDM_SECRET_PROVIDER": "REPLACE_WITH_APPROVED_SECRET_PROVIDER",
+        "PDM_SECRET_ROTATION_POLICY": "REPLACE_WITH_ROTATION_POLICY_REFERENCE",
+        "PDM_SECRET_ROTATION_TESTED_AT": "REPLACE_WITH_RFC3339_ROTATION_TEST_TIME",
+        "PDM_TLS_TERMINATED": "REPLACE_WITH_1_AFTER_TRUSTED_INGRESS_ENABLED",
+        "PDM_TLS_INGRESS_ID": "REPLACE_WITH_TRUSTED_INGRESS_ID",
+        "PDM_METRICS_EXPORTER": "REPLACE_WITH_METRICS_EXPORTER_REFERENCE",
+        "PDM_LOG_SINK": "REPLACE_WITH_LOG_SINK_REFERENCE",
+        "PDM_TRACE_EXPORTER": "REPLACE_WITH_TRACE_EXPORTER_REFERENCE",
+        "PDM_ALERT_ROUTING": "REPLACE_WITH_ALERT_ROUTING_REFERENCE",
+        "PDM_BACKUP_POLICY": "REPLACE_WITH_BACKUP_POLICY_REFERENCE",
+        "PDM_BACKUP_TARGET": "REPLACE_WITH_BACKUP_TARGET_REFERENCE",
+        "PDM_RESTORE_TESTED_AT": "REPLACE_WITH_RFC3339_RESTORE_TEST_TIME",
+        "PDM_CMMS_CONNECTOR_MODE": "production",
+        "PDM_CMMS_CONNECTOR_ID": "REPLACE_WITH_SITE_CONNECTOR_ID",
+        "PDM_CMMS_CONNECTOR_ENDPOINT": "REPLACE_WITH_HTTPS_SITE_CONNECTOR_ENDPOINT",
+        "PDM_CHANGE_TICKET": "REPLACE_WITH_APPROVED_CHANGE_TICKET",
+        "PDM_CHANGE_TICKET_STATUS": "REPLACE_WITH_APPROVED"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "ConfigMap",
+      "metadata": {
+        "name": "pdm-deployment-evidence",
+        "namespace": "pdm-production"
+      },
+      "data": {
+        "evidence.json": "{}\n"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "ConfigMap",
+      "metadata": {
+        "name": "pdm-field-qualification-evidence",
+        "namespace": "pdm-production"
+      },
+      "data": {
+        "qualification.json": "{}\n"
+      }
+    },
+    {
+      "apiVersion": "apps/v1",
+      "kind": "Deployment",
+      "metadata": {
+        "name": "pdm-platform",
+        "namespace": "pdm-production",
+        "labels": {
+          "app.kubernetes.io/name": "pdm-platform",
+          "app.kubernetes.io/part-of": "predictive-maintenance"
+        }
+      },
+      "spec": {
+        "replicas": 3,
+        "revisionHistoryLimit": 10,
+        "strategy": {
+          "type": "RollingUpdate",
+          "rollingUpdate": {
+            "maxUnavailable": 0,
+            "maxSurge": 1
+          }
+        },
+        "selector": {
+          "matchLabels": {
+            "app.kubernetes.io/name": "pdm-platform"
+          }
+        },
+        "template": {
+          "metadata": {
+            "labels": {
+              "app.kubernetes.io/name": "pdm-platform",
+              "app.kubernetes.io/part-of": "predictive-maintenance"
+            }
+          },
+          "spec": {
+            "serviceAccountName": "pdm-platform",
+            "automountServiceAccountToken": false,
+            "terminationGracePeriodSeconds": 30,
+            "securityContext": {
+              "runAsNonRoot": true,
+              "runAsUser": 10001,
+              "runAsGroup": 10001,
+              "fsGroup": 10001,
+              "seccompProfile": {
+                "type": "RuntimeDefault"
+              }
+            },
+            "topologySpreadConstraints": [
+              {
+                "maxSkew": 1,
+                "topologyKey": "topology.kubernetes.io/zone",
+                "whenUnsatisfiable": "ScheduleAnyway",
+                "labelSelector": {
+                  "matchLabels": {
+                    "app.kubernetes.io/name": "pdm-platform"
+                  }
+                }
+              }
+            ],
+            "containers": [
+              {
+                "name": "platform",
+                "image": "registry.example.com/pdm/predictive-maintenance@sha256:REPLACE_WITH_IMAGE_DIGEST",
+                "imagePullPolicy": "Always",
+                "ports": [
+                  {
+                    "name": "http",
+                    "containerPort": 8000,
+                    "protocol": "TCP"
+                  }
+                ],
+                "envFrom": [
+                  {
+                    "configMapRef": {
+                      "name": "pdm-platform-config"
+                    }
+                  }
+                ],
+                "env": [
+                  {
+                    "name": "PDM_API_KEYS",
+                    "valueFrom": {
+                      "secretKeyRef": {
+                        "name": "pdm-runtime-secrets",
+                        "key": "PDM_API_KEYS",
+                        "optional": false
+                      }
+                    }
+                  },
+                  {
+                    "name": "PDM_DATABASE_URL",
+                    "valueFrom": {
+                      "secretKeyRef": {
+                        "name": "pdm-runtime-secrets",
+                        "key": "PDM_DATABASE_URL",
+                        "optional": false
+                      }
+                    }
+                  }
+                ],
+                "resources": {
+                  "requests": {
+                    "cpu": "250m",
+                    "memory": "512Mi"
+                  },
+                  "limits": {
+                    "cpu": "1",
+                    "memory": "1Gi"
+                  }
+                },
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "readOnlyRootFilesystem": true,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  }
+                },
+                "startupProbe": {
+                  "httpGet": {
+                    "path": "/api/health",
+                    "port": "http",
+                    "scheme": "HTTP"
+                  },
+                  "periodSeconds": 10,
+                  "timeoutSeconds": 5,
+                  "failureThreshold": 30
+                },
+                "readinessProbe": {
+                  "httpGet": {
+                    "path": "/api/health/ready",
+                    "port": "http",
+                    "scheme": "HTTP"
+                  },
+                  "periodSeconds": 10,
+                  "timeoutSeconds": 5,
+                  "failureThreshold": 3,
+                  "successThreshold": 1
+                },
+                "livenessProbe": {
+                  "httpGet": {
+                    "path": "/api/health",
+                    "port": "http",
+                    "scheme": "HTTP"
+                  },
+                  "periodSeconds": 30,
+                  "timeoutSeconds": 5,
+                  "failureThreshold": 3
+                },
+                "volumeMounts": [
+                  {
+                    "name": "deployment-evidence",
+                    "mountPath": "/etc/pdm/deployment",
+                    "readOnly": true
+                  },
+                  {
+                    "name": "field-qualification-evidence",
+                    "mountPath": "/etc/pdm/field",
+                    "readOnly": true
+                  },
+                  {
+                    "name": "tmp",
+                    "mountPath": "/tmp"
+                  }
+                ]
+              }
+            ],
+            "volumes": [
+              {
+                "name": "deployment-evidence",
+                "configMap": {
+                  "name": "pdm-deployment-evidence",
+                  "defaultMode": 440,
+                  "optional": false
+                }
+              },
+              {
+                "name": "field-qualification-evidence",
+                "configMap": {
+                  "name": "pdm-field-qualification-evidence",
+                  "defaultMode": 440,
+                  "optional": false
+                }
+              },
+              {
+                "name": "tmp",
+                "emptyDir": {
+                  "medium": "Memory",
+                  "sizeLimit": "256Mi"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "batch/v1",
+      "kind": "Job",
+      "metadata": {
+        "name": "pdm-managed-state-migrate",
+        "namespace": "pdm-production"
+      },
+      "spec": {
+        "suspend": true,
+        "backoffLimit": 0,
+        "ttlSecondsAfterFinished": 86400,
+        "template": {
+          "metadata": {
+            "labels": {
+              "app.kubernetes.io/name": "pdm-managed-state-migrate",
+              "app.kubernetes.io/part-of": "predictive-maintenance"
+            }
+          },
+          "spec": {
+            "restartPolicy": "Never",
+            "automountServiceAccountToken": false,
+            "securityContext": {
+              "runAsNonRoot": true,
+              "runAsUser": 10001,
+              "runAsGroup": 10001,
+              "fsGroup": 10001,
+              "seccompProfile": {
+                "type": "RuntimeDefault"
+              }
+            },
+            "containers": [
+              {
+                "name": "migrate",
+                "image": "registry.example.com/pdm/predictive-maintenance@sha256:REPLACE_WITH_IMAGE_DIGEST",
+                "imagePullPolicy": "Always",
+                "command": [
+                  "python",
+                  "scripts/managed_state_migrate.py"
+                ],
+                "envFrom": [
+                  {
+                    "configMapRef": {
+                      "name": "pdm-platform-config"
+                    }
+                  }
+                ],
+                "env": [
+                  {
+                    "name": "PDM_DATABASE_URL",
+                    "valueFrom": {
+                      "secretKeyRef": {
+                        "name": "pdm-runtime-secrets",
+                        "key": "PDM_DATABASE_URL",
+                        "optional": false
+                      }
+                    }
+                  }
+                ],
+                "resources": {
+                  "requests": {
+                    "cpu": "100m",
+                    "memory": "256Mi"
+                  },
+                  "limits": {
+                    "cpu": "500m",
+                    "memory": "512Mi"
+                  }
+                },
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "readOnlyRootFilesystem": true,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  }
+                },
+                "volumeMounts": [
+                  {
+                    "name": "tmp",
+                    "mountPath": "/tmp"
+                  }
+                ]
+              }
+            ],
+            "volumes": [
+              {
+                "name": "tmp",
+                "emptyDir": {
+                  "medium": "Memory",
+                  "sizeLimit": "128Mi"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Service",
+      "metadata": {
+        "name": "pdm-platform",
+        "namespace": "pdm-production"
+      },
+      "spec": {
+        "type": "ClusterIP",
+        "selector": {
+          "app.kubernetes.io/name": "pdm-platform"
+        },
+        "ports": [
+          {
+            "name": "http",
+            "port": 80,
+            "targetPort": "http",
+            "protocol": "TCP"
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "networking.k8s.io/v1",
+      "kind": "Ingress",
+      "metadata": {
+        "name": "pdm-platform",
+        "namespace": "pdm-production"
+      },
+      "spec": {
+        "ingressClassName": "REPLACE_WITH_TRUSTED_INGRESS_CLASS",
+        "tls": [
+          {
+            "hosts": [
+              "REPLACE_WITH_PRODUCTION_HOSTNAME"
+            ],
+            "secretName": "REPLACE_WITH_TRUSTED_TLS_SECRET"
+          }
+        ],
+        "rules": [
+          {
+            "host": "REPLACE_WITH_PRODUCTION_HOSTNAME",
+            "http": {
+              "paths": [
+                {
+                  "path": "/",
+                  "pathType": "Prefix",
+                  "backend": {
+                    "service": {
+                      "name": "pdm-platform",
+                      "port": {
+                        "name": "http"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "policy/v1",
+      "kind": "PodDisruptionBudget",
+      "metadata": {
+        "name": "pdm-platform",
+        "namespace": "pdm-production"
+      },
+      "spec": {
+        "minAvailable": 2,
+        "selector": {
+          "matchLabels": {
+            "app.kubernetes.io/name": "pdm-platform"
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "networking.k8s.io/v1",
+      "kind": "NetworkPolicy",
+      "metadata": {
+        "name": "pdm-platform-default-deny-with-required-egress",
+        "namespace": "pdm-production"
+      },
+      "spec": {
+        "podSelector": {
+          "matchLabels": {
+            "app.kubernetes.io/name": "pdm-platform"
+          }
+        },
+        "policyTypes": [
+          "Ingress",
+          "Egress"
+        ],
+        "ingress": [
+          {
+            "from": [
+              {
+                "namespaceSelector": {
+                  "matchLabels": {
+                    "kubernetes.io/metadata.name": "ingress-system"
+                  }
+                }
+              }
+            ],
+            "ports": [
+              {
+                "protocol": "TCP",
+                "port": 8000
+              }
+            ]
+          }
+        ],
+        "egress": [
+          {
+            "to": [
+              {
+                "namespaceSelector": {
+                  "matchLabels": {
+                    "kubernetes.io/metadata.name": "pdm-data"
+                  }
+                }
+              }
+            ],
+            "ports": [
+              {
+                "protocol": "TCP",
+                "port": 5432
+              }
+            ]
+          },
+          {
+            "to": [
+              {
+                "namespaceSelector": {
+                  "matchLabels": {
+                    "kubernetes.io/metadata.name": "kube-system"
+                  }
+                },
+                "podSelector": {
+                  "matchLabels": {
+                    "k8s-app": "kube-dns"
+                  }
+                }
+              }
+            ],
+            "ports": [
+              {
+                "protocol": "UDP",
+                "port": 53
+              },
+              {
+                "protocol": "TCP",
+                "port": 53
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,839 @@
+{
+  "metrics": {
+    "mae": 7.156081287855363,
+    "rmse": 9.898829971682321,
+    "r2": 0.9374564054920973,
+    "nasa_score": 1853.3795015106548
+  },
+  "baseline_metrics": {
+    "mae": 16.253700939084194,
+    "rmse": 19.121170803358822,
+    "r2": 0.7666305137994729
+  },
+  "reliability": {
+    "mtbf_cycles": 129.8,
+    "mttr_cycles": 8.0,
+    "availability": 0.941944847605225,
+    "weibull_shape": 5.911597704132754,
+    "weibull_scale": 140.08834260865314,
+    "hazard_phase": "wear_out"
+  },
+  "predictions": [
+    {
+      "unit_id": 1,
+      "cycle": 72,
+      "predicted_rul": 26.5513,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 26.0,
+      "failure_risk": 0.613
+    },
+    {
+      "unit_id": 2,
+      "cycle": 142,
+      "predicted_rul": 17.99,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 18.0,
+      "failure_risk": 0.8322
+    },
+    {
+      "unit_id": 3,
+      "cycle": 124,
+      "predicted_rul": 37.8878,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 39.0,
+      "failure_risk": 0.2589
+    },
+    {
+      "unit_id": 4,
+      "cycle": 79,
+      "predicted_rul": 21.2256,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 20.0,
+      "failure_risk": 0.7631
+    },
+    {
+      "unit_id": 5,
+      "cycle": 128,
+      "predicted_rul": 28.9758,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 29.0,
+      "failure_risk": 0.5341
+    },
+    {
+      "unit_id": 6,
+      "cycle": 132,
+      "predicted_rul": 22.1367,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 21.0,
+      "failure_risk": 0.7405
+    },
+    {
+      "unit_id": 7,
+      "cycle": 107,
+      "predicted_rul": 39.1736,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 40.0,
+      "failure_risk": 0.2274
+    },
+    {
+      "unit_id": 8,
+      "cycle": 79,
+      "predicted_rul": 45.4222,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 43.0,
+      "failure_risk": 0.1134
+    },
+    {
+      "unit_id": 9,
+      "cycle": 76,
+      "predicted_rul": 26.3049,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 26.0,
+      "failure_risk": 0.6207
+    },
+    {
+      "unit_id": 10,
+      "cycle": 117,
+      "predicted_rul": 59.9626,
+      "anomaly_score": 0.0,
+      "true_rul_fixture": 62.0,
+      "failure_risk": 0.0181
+    },
+    {
+      "unit_id": 11,
+      "cycle": 110,
+      "predicted_rul": 43.3092,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 44.0,
+      "failure_risk": 0.145
+    },
+    {
+      "unit_id": 12,
+      "cycle": 136,
+      "predicted_rul": 27.1626,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 27.0,
+      "failure_risk": 0.5935
+    },
+    {
+      "unit_id": 13,
+      "cycle": 85,
+      "predicted_rul": 35.1036,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 36.0,
+      "failure_risk": 0.3362
+    },
+    {
+      "unit_id": 14,
+      "cycle": 89,
+      "predicted_rul": 18.9286,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 19.0,
+      "failure_risk": 0.814
+    },
+    {
+      "unit_id": 15,
+      "cycle": 81,
+      "predicted_rul": 18.5107,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 18.0,
+      "failure_risk": 0.8223
+    },
+    {
+      "unit_id": 16,
+      "cycle": 111,
+      "predicted_rul": 15.8125,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 15.0,
+      "failure_risk": 0.8689
+    },
+    {
+      "unit_id": 17,
+      "cycle": 105,
+      "predicted_rul": 27.66,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 27.0,
+      "failure_risk": 0.5774
+    },
+    {
+      "unit_id": 18,
+      "cycle": 87,
+      "predicted_rul": 30.286,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 30.0,
+      "failure_risk": 0.4905
+    },
+    {
+      "unit_id": 19,
+      "cycle": 89,
+      "predicted_rul": 33.0976,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 33.0,
+      "failure_risk": 0.3982
+    },
+    {
+      "unit_id": 20,
+      "cycle": 72,
+      "predicted_rul": 30.7545,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 32.0,
+      "failure_risk": 0.4749
+    },
+    {
+      "unit_id": 21,
+      "cycle": 102,
+      "predicted_rul": 27.5127,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 29.0,
+      "failure_risk": 0.5822
+    },
+    {
+      "unit_id": 22,
+      "cycle": 117,
+      "predicted_rul": 38.2774,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 40.0,
+      "failure_risk": 0.2491
+    },
+    {
+      "unit_id": 23,
+      "cycle": 91,
+      "predicted_rul": 19.7274,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 20.0,
+      "failure_risk": 0.7973
+    },
+    {
+      "unit_id": 24,
+      "cycle": 84,
+      "predicted_rul": 36.0941,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 35.0,
+      "failure_risk": 0.3073
+    },
+    {
+      "unit_id": 25,
+      "cycle": 67,
+      "predicted_rul": 40.152,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 40.0,
+      "failure_risk": 0.2053
+    },
+    {
+      "unit_id": 26,
+      "cycle": 116,
+      "predicted_rul": 35.6072,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 35.0,
+      "failure_risk": 0.3213
+    },
+    {
+      "unit_id": 27,
+      "cycle": 105,
+      "predicted_rul": 12.3688,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 13.0,
+      "failure_risk": 0.913
+    },
+    {
+      "unit_id": 28,
+      "cycle": 106,
+      "predicted_rul": 41.0716,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 39.0,
+      "failure_risk": 0.186
+    },
+    {
+      "unit_id": 29,
+      "cycle": 123,
+      "predicted_rul": 38.5632,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 37.0,
+      "failure_risk": 0.242
+    },
+    {
+      "unit_id": 30,
+      "cycle": 81,
+      "predicted_rul": 12.9766,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 13.0,
+      "failure_risk": 0.9063
+    },
+    {
+      "unit_id": 31,
+      "cycle": 104,
+      "predicted_rul": 45.5545,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 44.0,
+      "failure_risk": 0.1117
+    },
+    {
+      "unit_id": 32,
+      "cycle": 81,
+      "predicted_rul": 20.612,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 20.0,
+      "failure_risk": 0.7776
+    },
+    {
+      "unit_id": 33,
+      "cycle": 81,
+      "predicted_rul": 30.6049,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 32.0,
+      "failure_risk": 0.4798
+    },
+    {
+      "unit_id": 34,
+      "cycle": 70,
+      "predicted_rul": 26.785,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 26.0,
+      "failure_risk": 0.6056
+    },
+    {
+      "unit_id": 35,
+      "cycle": 112,
+      "predicted_rul": 19.1412,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 20.0,
+      "failure_risk": 0.8097
+    },
+    {
+      "unit_id": 36,
+      "cycle": 72,
+      "predicted_rul": 33.649,
+      "anomaly_score": 0.0,
+      "true_rul_fixture": 33.0,
+      "failure_risk": 0.3807
+    },
+    {
+      "unit_id": 37,
+      "cycle": 129,
+      "predicted_rul": 34.4803,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 36.0,
+      "failure_risk": 0.3549
+    },
+    {
+      "unit_id": 38,
+      "cycle": 103,
+      "predicted_rul": 40.2034,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 40.0,
+      "failure_risk": 0.2042
+    },
+    {
+      "unit_id": 39,
+      "cycle": 91,
+      "predicted_rul": 17.1332,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 16.0,
+      "failure_risk": 0.8476
+    },
+    {
+      "unit_id": 40,
+      "cycle": 135,
+      "predicted_rul": 27.612,
+      "anomaly_score": 1.0,
+      "true_rul_fixture": 28.0,
+      "failure_risk": 0.5789
+    }
+  ],
+  "decisions": [
+    {
+      "asset_id": 1,
+      "action": "plan_maintenance",
+      "priority": 2,
+      "recommended_cycle": 83,
+      "expected_cost": 23389.182465545462,
+      "rationale": "Predicted RUL=26.6 cycles, failure-risk=0.61, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.7290809241960609
+    },
+    {
+      "asset_id": 2,
+      "action": "plan_maintenance",
+      "priority": 2,
+      "recommended_cycle": 148,
+      "expected_cost": 29966.11728719436,
+      "rationale": "Predicted RUL=18.0 cycles, failure-risk=0.83, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.8825427367012016
+    },
+    {
+      "asset_id": 3,
+      "action": "inspect",
+      "priority": 3,
+      "recommended_cycle": 143,
+      "expected_cost": 12766.896761557802,
+      "rationale": "Predicted RUL=37.9 cycles, failure-risk=0.26, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.8187724088969847
+    },
+    {
+      "asset_id": 4,
+      "action": "plan_maintenance",
+      "priority": 2,
+      "recommended_cycle": 89,
+      "expected_cost": 27893.95041710996,
+      "rationale": "Predicted RUL=21.2 cycles, failure-risk=0.76, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.8341921763992325
+    },
+    {
+      "asset_id": 5,
+      "action": "plan_maintenance",
+      "priority": 2,
+      "recommended_cycle": 142,
+      "expected_cost": 21022.588093260558,
+      "rationale": "Predicted RUL=29.0 cycles, failure-risk=0.53, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.6738603888427463
+    },
+    {
+      "asset_id": 6,
+      "action": "plan_maintenance",
+      "priority": 2,
+      "recommended_cycle": 142,
+      "expected_cost": 27214.281347244607,
+      "rationale": "Predicted RUL=22.1 cycles, failure-risk=0.74, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.8183332314357075
+    },
+    {
+      "asset_id": 7,
+      "action": "inspect",
+      "priority": 3,
+      "recommended_cycle": 128,
+      "expected_cost": 11821.460010284527,
+      "rationale": "Predicted RUL=39.2 cycles, failure-risk=0.23, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.8408325997600277
+    },
+    {
+      "asset_id": 8,
+      "action": "inspect",
+      "priority": 3,
+      "recommended_cycle": 102,
+      "expected_cost": 8402.544293959963,
+      "rationale": "Predicted RUL=45.4 cycles, failure-risk=0.11, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.9206072998076008
+    },
+    {
+      "asset_id": 9,
+      "action": "plan_maintenance",
+      "priority": 2,
+      "recommended_cycle": 88,
+      "expected_cost": 23622.151584976604,
+      "rationale": "Predicted RUL=26.3 cycles, failure-risk=0.62, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.7345168703161208
+    },
+    {
+      "asset_id": 10,
+      "action": "monitor",
+      "priority": 4,
+      "recommended_cycle": 146,
+      "expected_cost": 5542.238247904495,
+      "rationale": "Predicted RUL=60.0 cycles, failure-risk=0.02, anomaly=0.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.8873477742155618
+    },
+    {
+      "asset_id": 11,
+      "action": "inspect",
+      "priority": 3,
+      "recommended_cycle": 131,
+      "expected_cost": 9349.279487317013,
+      "rationale": "Predicted RUL=43.3 cycles, failure-risk=0.14, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.898516811962603
+    },
+    {
+      "asset_id": 12,
+      "action": "plan_maintenance",
+      "priority": 2,
+      "recommended_cycle": 147,
+      "expected_cost": 22804.021096959485,
+      "rationale": "Predicted RUL=27.2 cycles, failure-risk=0.59, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.7154271589290546
+    },
+    {
+      "asset_id": 13,
+      "action": "inspect",
+      "priority": 3,
+      "recommended_cycle": 102,
+      "expected_cost": 15084.60707274325,
+      "rationale": "Predicted RUL=35.1 cycles, failure-risk=0.34, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.7646925016359908
+    },
+    {
+      "asset_id": 14,
+      "action": "plan_maintenance",
+      "priority": 2,
+      "recommended_cycle": 95,
+      "expected_cost": 29419.871881653555,
+      "rationale": "Predicted RUL=18.9 cycles, failure-risk=0.81, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.8697970105719163
+    },
+    {
+      "asset_id": 15,
+      "action": "plan_maintenance",
+      "priority": 2,
+      "recommended_cycle": 86,
+      "expected_cost": 29668.5651887357,
+      "rationale": "Predicted RUL=18.5 cycles, failure-risk=0.82, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.875599854403833
+    },
+    {
+      "asset_id": 16,
+      "action": "plan_maintenance",
+      "priority": 2,
+      "recommended_cycle": 118,
+      "expected_cost": 31068.379198376486,
+      "rationale": "Predicted RUL=15.8 cycles, failure-risk=0.87, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.9082621812954513
+    },
+    {
+      "asset_id": 17,
+      "action": "plan_maintenance",
+      "priority": 2,
+      "recommended_cycle": 118,
+      "expected_cost": 22321.176425397654,
+      "rationale": "Predicted RUL=27.7 cycles, failure-risk=0.58, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.7041607832592787
+    },
+    {
+      "asset_id": 18,
+      "action": "inspect",
+      "priority": 3,
+      "recommended_cycle": 101,
+      "expected_cost": 19714.073238490426,
+      "rationale": "Predicted RUL=30.3 cycles, failure-risk=0.49, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.6566716244352234
+    },
+    {
+      "asset_id": 19,
+      "action": "inspect",
+      "priority": 3,
+      "recommended_cycle": 105,
+      "expected_cost": 16945.70408273359,
+      "rationale": "Predicted RUL=33.1 cycles, failure-risk=0.40, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.7212669047362162
+    },
+    {
+      "asset_id": 20,
+      "action": "inspect",
+      "priority": 3,
+      "recommended_cycle": 87,
+      "expected_cost": 19246.129916890903,
+      "rationale": "Predicted RUL=30.8 cycles, failure-risk=0.47, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.6675903019392123
+    },
+    {
+      "asset_id": 21,
+      "action": "plan_maintenance",
+      "priority": 2,
+      "recommended_cycle": 114,
+      "expected_cost": 22464.767183395757,
+      "rationale": "Predicted RUL=27.5 cycles, failure-risk=0.58, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.7075112342792343
+    },
+    {
+      "asset_id": 22,
+      "action": "inspect",
+      "priority": 3,
+      "recommended_cycle": 136,
+      "expected_cost": 12471.650908669275,
+      "rationale": "Predicted RUL=38.3 cycles, failure-risk=0.25, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.8256614787977169
+    },
+    {
+      "asset_id": 23,
+      "action": "plan_maintenance",
+      "priority": 2,
+      "recommended_cycle": 99,
+      "expected_cost": 28919.835052132297,
+      "rationale": "Predicted RUL=19.7 cycles, failure-risk=0.80, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.8581294845497537
+    },
+    {
+      "asset_id": 24,
+      "action": "inspect",
+      "priority": 3,
+      "recommended_cycle": 102,
+      "expected_cost": 14220.418186207346,
+      "rationale": "Predicted RUL=36.1 cycles, failure-risk=0.31, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.7848569089884952
+    },
+    {
+      "asset_id": 25,
+      "action": "inspect",
+      "priority": 3,
+      "recommended_cycle": 89,
+      "expected_cost": 11158.466020391348,
+      "rationale": "Predicted RUL=40.2 cycles, failure-risk=0.21, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.8563024595242019
+    },
+    {
+      "asset_id": 26,
+      "action": "inspect",
+      "priority": 3,
+      "recommended_cycle": 134,
+      "expected_cost": 14640.201914528014,
+      "rationale": "Predicted RUL=35.6 cycles, failure-risk=0.32, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.7750619553276797
+    },
+    {
+      "asset_id": 27,
+      "action": "maintain_now",
+      "priority": 1,
+      "recommended_cycle": 110,
+      "expected_cost": 32389.993691804844,
+      "rationale": "Predicted RUL=12.4 cycles, failure-risk=0.91, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.9390998528087797
+    },
+    {
+      "asset_id": 28,
+      "action": "inspect",
+      "priority": 3,
+      "recommended_cycle": 126,
+      "expected_cost": 10579.991371093816,
+      "rationale": "Predicted RUL=41.1 cycles, failure-risk=0.19, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.8698002013411443
+    },
+    {
+      "asset_id": 29,
+      "action": "inspect",
+      "priority": 3,
+      "recommended_cycle": 146,
+      "expected_cost": 12259.953623112398,
+      "rationale": "Predicted RUL=38.6 cycles, failure-risk=0.24, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.8306010821273774
+    },
+    {
+      "asset_id": 30,
+      "action": "maintain_now",
+      "priority": 1,
+      "recommended_cycle": 85,
+      "expected_cost": 32190.32657716887,
+      "rationale": "Predicted RUL=13.0 cycles, failure-risk=0.91, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.9344409534672736
+    },
+    {
+      "asset_id": 31,
+      "action": "inspect",
+      "priority": 3,
+      "recommended_cycle": 126,
+      "expected_cost": 8349.673918557004,
+      "rationale": "Predicted RUL=45.6 cycles, failure-risk=0.11, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.9218409419003365
+    },
+    {
+      "asset_id": 32,
+      "action": "plan_maintenance",
+      "priority": 2,
+      "recommended_cycle": 90,
+      "expected_cost": 28327.98129093249,
+      "rationale": "Predicted RUL=20.6 cycles, failure-risk=0.78, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.8443195634550914
+    },
+    {
+      "asset_id": 33,
+      "action": "inspect",
+      "priority": 3,
+      "recommended_cycle": 96,
+      "expected_cost": 19395.471295864336,
+      "rationale": "Predicted RUL=30.6 cycles, failure-risk=0.48, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.6641056697631655
+    },
+    {
+      "asset_id": 34,
+      "action": "plan_maintenance",
+      "priority": 2,
+      "recommended_cycle": 79,
+      "expected_cost": 23166.699687434077,
+      "rationale": "Predicted RUL=26.8 cycles, failure-risk=0.61, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.7238896593734617
+    },
+    {
+      "asset_id": 35,
+      "action": "plan_maintenance",
+      "priority": 2,
+      "recommended_cycle": 120,
+      "expected_cost": 29289.98287159542,
+      "rationale": "Predicted RUL=19.1 cycles, failure-risk=0.81, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.8667662670038931
+    },
+    {
+      "asset_id": 36,
+      "action": "monitor",
+      "priority": 4,
+      "recommended_cycle": 88,
+      "expected_cost": 16421.349050738034,
+      "rationale": "Predicted RUL=33.6 cycles, failure-risk=0.38, anomaly=0.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.6335018554827793
+    },
+    {
+      "asset_id": 37,
+      "action": "inspect",
+      "priority": 3,
+      "recommended_cycle": 146,
+      "expected_cost": 15648.33697327109,
+      "rationale": "Predicted RUL=34.5 cycles, failure-risk=0.35, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.7515388039570079
+    },
+    {
+      "asset_id": 38,
+      "action": "inspect",
+      "priority": 3,
+      "recommended_cycle": 123,
+      "expected_cost": 11124.98565751844,
+      "rationale": "Predicted RUL=40.2 cycles, failure-risk=0.20, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.8570836679912365
+    },
+    {
+      "asset_id": 39,
+      "action": "plan_maintenance",
+      "priority": 2,
+      "recommended_cycle": 98,
+      "expected_cost": 30426.75195746557,
+      "rationale": "Predicted RUL=17.1 cycles, failure-risk=0.85, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.89329087900753
+    },
+    {
+      "asset_id": 40,
+      "action": "plan_maintenance",
+      "priority": 2,
+      "recommended_cycle": 148,
+      "expected_cost": 22368.0190379297,
+      "rationale": "Predicted RUL=27.6 cycles, failure-risk=0.58, anomaly=1.00; action selected by risk/RUL policy and capacity-aware schedule.",
+      "confidence": 0.7052537775516929
+    }
+  ],
+  "simulation": [
+    {
+      "policy": "run_to_failure",
+      "expected_total_cost": 1488704.5108603444,
+      "expected_failures": 40.0,
+      "expected_downtime_cycles": 240.58709238362047,
+      "preventive_actions": 0.0
+    },
+    {
+      "policy": "predictive",
+      "expected_total_cost": 252021.84365504512,
+      "expected_failures": 0.13,
+      "expected_downtime_cycles": 40.64320304587093,
+      "preventive_actions": 39.87
+    }
+  ],
+  "candidate_metrics": {
+    "ridge": {
+      "mae": 9.473975365327522,
+      "rmse": 12.366747711128676,
+      "r2": 0.9023828530907538,
+      "nasa_score": 2486.872912922836
+    },
+    "random_forest": {
+      "mae": 7.156081287855363,
+      "rmse": 9.898829971682321,
+      "r2": 0.9374564054920973,
+      "nasa_score": 1853.3795015106548
+    },
+    "hist_gradient_boosting": {
+      "mae": 7.38712880139628,
+      "rmse": 10.298182369574368,
+      "r2": 0.9323081684446535,
+      "nasa_score": 2041.256705015349
+    }
+  },
+  "selected_model": "random_forest",
+  "top_features": [
+    {
+      "feature": "sensor_05_roll_mean",
+      "importance": 5.435799345883147
+    },
+    {
+      "feature": "sensor_14",
+      "importance": 4.010858028519499
+    },
+    {
+      "feature": "cycle",
+      "importance": 2.4422747666020133
+    },
+    {
+      "feature": "sensor_14_roll_mean",
+      "importance": 1.9981047769743974
+    },
+    {
+      "feature": "sensor_06",
+      "importance": 1.552070511544887
+    },
+    {
+      "feature": "sensor_06_roll_mean",
+      "importance": 1.3688011809326994
+    },
+    {
+      "feature": "sensor_11_roll_mean",
+      "importance": 0.6908556654441664
+    },
+    {
+      "feature": "sensor_09_roll_mean",
+      "importance": 0.3948289735924657
+    },
+    {
+      "feature": "sensor_18_roll_mean",
+      "importance": 0.3026840282808845
+    },
+    {
+      "feature": "sensor_07",
+      "importance": 0.2758049677653709
+    },
+    {
+      "feature": "sensor_20_roll_mean",
+      "importance": 0.26707136066788806
+    },
+    {
+      "feature": "sensor_07_roll_mean",
+      "importance": 0.262599283993346
+    }
+  ],
+  "simulation_optimization": {
+    "best_threshold_fraction": 0.3,
+    "best": {
+      "policy": "predictive_threshold_0.30",
+      "expected_total_cost": 247994.10303883065,
+      "expected_failures": 0.0,
+      "expected_downtime_cycles": 39.99508586569222,
+      "preventive_actions": 40.0
+    },
+    "trials": [
+      {
+        "policy": "predictive_threshold_0.20",
+        "expected_total_cost": 248260.77278562868,
+        "expected_failures": 0.0033333333333333335,
+        "expected_downtime_cycles": 40.14786621024613,
+        "preventive_actions": 39.99666666666667
+      },
+      {
+        "policy": "predictive_threshold_0.30",
+        "expected_total_cost": 247994.10303883065,
+        "expected_failures": 0.0,
+        "expected_downtime_cycles": 39.99508586569222,
+        "preventive_actions": 40.0
+      },
+      {
+        "policy": "predictive_threshold_0.40",
+        "expected_total_cost": 249713.7407165115,
+        "expected_failures": 0.056666666666666664,
+        "expected_downtime_cycles": 40.24756170820406,
+        "preventive_actions": 39.943333333333335
+      },
+      {
+        "policy": "predictive_threshold_0.50",
+        "expected_total_cost": 255739.39204273213,
+        "expected_failures": 0.25,
+        "expected_downtime_cycles": 41.24116003561011,
+        "preventive_actions": 39.75
+      },
+      {
+        "policy": "predictive_threshold_0.60",
+        "expected_total_cost": 275733.7741441858,
+        "expected_failures": 0.8833333333333333,
+        "expected_downtime_cycles": 44.7087006757104,
+        "preventive_actions": 39.11666666666667
+      }
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+asset_id,event_type,start_time,end_time,downtime_hours,labor_hours,part,cost,failure
+M-001,preventive,2025-11-01T08:00:00Z,2025-11-01T12:00:00Z,4,6,bearing-kit,1800,false
+M-002,corrective_failure,2025-10-14T05:00:00Z,2025-10-14T14:00:00Z,9,12,seal-kit,5200,true

@@ -1,0 +1,25 @@
+project: predictive-maintenance-intelligence
+use_case: turbofan-fleet-prognostics
+canonical_dataset: NASA_C_MAPSS
+primary_subset: FD001
+rul_cap_cycles: 125
+maintenance_horizon_cycles: 30
+maintenance_capacity_per_cycle: 2
+validation:
+  split_strategy: asset_group_holdout
+  primary_metric: rmse
+  secondary_metrics: [mae, r2]
+  baseline: age_only_ridge
+resource_constraints:
+  labor_hours_per_cycle: 16
+  spares_per_cycle: 2
+  skill_capacity_per_cycle:
+    mechanic: 2
+monitoring:
+  psi_watch_threshold: 0.10
+  psi_drift_threshold: 0.25
+security:
+  mode: local_unless_PDM_API_KEYS_set
+integration:
+  mode: batch_canonical_contracts
+  realtime_enabled: false

@@ -1,0 +1,28 @@
+{
+  "phase": 2,
+  "overall": "PASS",
+  "checks": {
+    "planner_feasible": true,
+    "all_assets_assigned_once": true,
+    "bay_capacity_respected": true,
+    "labor_capacity_respected": true,
+    "scenario_sensitivity": true,
+    "api_smoke": true
+  },
+  "api": {
+    "health": 200,
+    "planner": 200,
+    "scenarios": 200,
+    "frontend": 200
+  },
+  "planner": {
+    "asset_count": 18,
+    "solver": "scipy_highs_milp",
+    "solver_status": "OPTIMAL",
+    "objective": 782869.7911446257,
+    "mip_gap": 0.0,
+    "max_bays_used": 2,
+    "max_labor_hours_used": 16.0
+  },
+  "evidence_class": "OPTIMIZATION_VERIFIED_ON_HISTORICAL_BENCHMARK_SNAPSHOT"
+}

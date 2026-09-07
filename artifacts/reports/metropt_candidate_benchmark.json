@@ -1,0 +1,283 @@
+{
+  "dataset_root": "data\\external\\metropt3",
+  "gate_boundary": "Results are exploratory until the production preparation path records them. Promotion still requires validation and future-holdout AP above prevalence, ROC-AUC above chance, Brier loss better than the constant-prevalence baseline, event/block-clustered 95% bootstrap bounds supporting those comparisons, and at least two independent published failure windows in each evaluation period.",
+  "partition": {
+    "fit_before": "2020-06-01 00:00:00",
+    "holdout_from": "2020-07-01 00:00:00",
+    "shuffle": false,
+    "validation": "2020-06-01 00:00:00 to 2020-07-01 00:00:00"
+  },
+  "results": [
+    {
+      "anomaly_score_only": {
+        "holdout": {
+          "average_precision": 0.1145653542822641,
+          "brier": null,
+          "prevalence": 0.013907642452065893,
+          "prevalence_brier": 0.013714219933491388,
+          "roc_auc": 0.917960300927003
+        },
+        "validation": {
+          "average_precision": 0.025621208448680766,
+          "brier": null,
+          "prevalence": 0.04231560387893035,
+          "prevalence_brier": 0.04052499354729181,
+          "roc_auc": 0.2452205004943575
+        }
+      }
+    },
+    {
+      "feature_count": 7,
+      "holdout": {
+        "average_precision": 0.012087187578438432,
+        "brier": 0.30875280998261145,
+        "prevalence": 0.013907642452065893,
+        "prevalence_brier": 0.013714219933491388,
+        "roc_auc": 0.44665245962225925
+      },
+      "name": "logistic_baseline",
+      "validation": {
+        "average_precision": 0.03827804944067283,
+        "brier": 0.26739609841965595,
+        "prevalence": 0.04231560387893035,
+        "prevalence_brier": 0.04052499354729181,
+        "roc_auc": 0.44498141897650956
+      }
+    },
+    {
+      "feature_count": 7,
+      "holdout": {
+        "average_precision": 0.008113460325467281,
+        "brier": 0.014215926261992204,
+        "prevalence": 0.013907642452065893,
+        "prevalence_brier": 0.013714219933491388,
+        "roc_auc": 0.2045508628585938
+      },
+      "name": "logistic_unweighted_baseline",
+      "validation": {
+        "average_precision": 0.05546252537262824,
+        "brier": 0.041190127958350004,
+        "prevalence": 0.04231560387893035,
+        "prevalence_brier": 0.04052499354729181,
+        "roc_auc": 0.586870546520746
+      }
+    },
+    {
+      "feature_count": 7,
+      "holdout": {
+        "average_precision": 0.007877617517060434,
+        "brier": 0.014071730002257232,
+        "prevalence": 0.013907642452065893,
+        "prevalence_brier": 0.013714219933491388,
+        "roc_auc": 0.17416303181695514
+      },
+      "name": "logistic_unweighted_baseline_regularized",
+      "validation": {
+        "average_precision": 0.05739887726530356,
+        "brier": 0.04120436522596525,
+        "prevalence": 0.04231560387893035,
+        "prevalence_brier": 0.04052499354729181,
+        "roc_auc": 0.5895554191810712
+      }
+    },
+    {
+      "feature_count": 119,
+      "holdout": {
+        "average_precision": 0.008178390864278016,
+        "brier": 0.015007496235409923,
+        "prevalence": 0.013907642452065893,
+        "prevalence_brier": 0.013714219933491388,
+        "roc_auc": 0.2054601846029494
+      },
+      "name": "logistic_unweighted_engineered",
+      "validation": {
+        "average_precision": 0.028592472336849188,
+        "brier": 0.09324053081741057,
+        "prevalence": 0.04231560387893035,
+        "prevalence_brier": 0.04052499354729181,
+        "roc_auc": 0.3089457400020456
+      }
+    },
+    {
+      "feature_count": 119,
+      "holdout": {
+        "average_precision": 0.008178390864278016,
+        "brier": 0.015007496235409923,
+        "prevalence": 0.013907642452065893,
+        "prevalence_brier": 0.013714219933491388,
+        "roc_auc": 0.2054601846029494
+      },
+      "name": "logistic_regime_normalized_unweighted",
+      "validation": {
+        "average_precision": 0.028592472336849188,
+        "brier": 0.09324053081741057,
+        "prevalence": 0.04231560387893035,
+        "prevalence_brier": 0.04052499354729181,
+        "roc_auc": 0.3089457400020456
+      }
+    },
+    {
+      "feature_count": 8,
+      "holdout": {
+        "average_precision": 0.011891051590270471,
+        "brier": 0.348861457888907,
+        "prevalence": 0.013907642452065893,
+        "prevalence_brier": 0.013714219933491388,
+        "roc_auc": 0.45521390996385314
+      },
+      "name": "logistic_baseline_plus_anomaly",
+      "validation": {
+        "average_precision": 0.02868661744421285,
+        "brier": 0.32340911506996944,
+        "prevalence": 0.04231560387893035,
+        "prevalence_brier": 0.04052499354729181,
+        "roc_auc": 0.3296086052299615
+      }
+    },
+    {
+      "feature_count": 120,
+      "holdout": {
+        "average_precision": 0.007081387379850994,
+        "brier": 0.4623610220889531,
+        "prevalence": 0.013907642452065893,
+        "prevalence_brier": 0.013714219933491388,
+        "roc_auc": 0.013976168857325555
+      },
+      "name": "logistic_balanced",
+      "validation": {
+        "average_precision": 0.03378148073894353,
+        "brier": 0.3645547527427135,
+        "prevalence": 0.04231560387893035,
+        "prevalence_brier": 0.04052499354729181,
+        "roc_auc": 0.4259891411816849
+      }
+    },
+    {
+      "feature_count": 120,
+      "holdout": {
+        "average_precision": 0.00706981645316663,
+        "brier": 0.48505240570363134,
+        "prevalence": 0.013907642452065893,
+        "prevalence_brier": 0.013714219933491388,
+        "roc_auc": 0.0071682205344525286
+      },
+      "name": "logistic_regularized",
+      "validation": {
+        "average_precision": 0.03277448879047091,
+        "brier": 0.37290228081336224,
+        "prevalence": 0.04231560387893035,
+        "prevalence_brier": 0.04052499354729181,
+        "roc_auc": 0.40906378916504726
+      }
+    },
+    {
+      "feature_count": 120,
+      "holdout": {
+        "average_precision": 0.007336244952552797,
+        "brier": 0.2608449153691566,
+        "prevalence": 0.013907642452065893,
+        "prevalence_brier": 0.013714219933491388,
+        "roc_auc": 0.04965641198124457
+      },
+      "name": "extra_trees",
+      "validation": {
+        "average_precision": 0.03323806464937808,
+        "brier": 0.200632330053678,
+        "prevalence": 0.04231560387893035,
+        "prevalence_brier": 0.04052499354729181,
+        "roc_auc": 0.42126717466162084
+      }
+    },
+    {
+      "feature_count": 119,
+      "holdout": {
+        "average_precision": 0.007469879905130101,
+        "brier": 0.019527339477555028,
+        "prevalence": 0.013907642452065893,
+        "prevalence_brier": 0.013714219933491388,
+        "roc_auc": 0.1027161334150482
+      },
+      "name": "random_forest_unweighted",
+      "validation": {
+        "average_precision": 0.02597437771698295,
+        "brier": 0.057272752625264475,
+        "prevalence": 0.04231560387893035,
+        "prevalence_brier": 0.04052499354729181,
+        "roc_auc": 0.2523300859159251
+      }
+    },
+    {
+      "feature_count": 120,
+      "holdout": {
+        "average_precision": 0.00818100656267715,
+        "brier": 0.0762330387769288,
+        "prevalence": 0.013907642452065893,
+        "prevalence_brier": 0.013714219933491388,
+        "roc_auc": 0.18406453525549415
+      },
+      "name": "random_forest_deeper",
+      "validation": {
+        "average_precision": 0.030652076319077334,
+        "brier": 0.07626427320393195,
+        "prevalence": 0.04231560387893035,
+        "prevalence_brier": 0.04052499354729181,
+        "roc_auc": 0.36440647267396276
+      }
+    },
+    {
+      "feature_count": 120,
+      "holdout": {
+        "average_precision": 0.007962832635445588,
+        "brier": 0.03288046355503647,
+        "prevalence": 0.013907642452065893,
+        "prevalence_brier": 0.013714219933491388,
+        "roc_auc": 0.18939948870593146
+      },
+      "name": "hist_gradient_boosting",
+      "validation": {
+        "average_precision": 0.03623092684787847,
+        "brier": 0.08867665352790025,
+        "prevalence": 0.04231560387893035,
+        "prevalence_brier": 0.04052499354729181,
+        "roc_auc": 0.45687902730899044
+      }
+    },
+    {
+      "feature_count": 119,
+      "holdout": {
+        "average_precision": 0.007758296474618439,
+        "brier": 0.016989209649648934,
+        "prevalence": 0.013907642452065893,
+        "prevalence_brier": 0.013714219933491388,
+        "roc_auc": 0.17344248739379614
+      },
+      "name": "hist_gradient_boosting_unweighted",
+      "validation": {
+        "average_precision": 0.028881733307961416,
+        "brier": 0.06363456257119528,
+        "prevalence": 0.04231560387893035,
+        "prevalence_brier": 0.04052499354729181,
+        "roc_auc": 0.32778246565067676
+      }
+    },
+    {
+      "feature_count": 120,
+      "holdout": {
+        "average_precision": 0.0074833454037408435,
+        "brier": 0.02109952534470988,
+        "prevalence": 0.013907642452065893,
+        "prevalence_brier": 0.013714219933491388,
+        "roc_auc": 0.10344266021810428
+      },
+      "name": "gradient_boosting",
+      "validation": {
+        "average_precision": 0.03028887954435822,
+        "brier": 0.05479974991030148,
+        "prevalence": 0.04231560387893035,
+        "prevalence_brier": 0.04052499354729181,
+        "roc_auc": 0.34379048617503666
+      }
+    }
+  ],
+  "target": "failure_within_24h"
+}

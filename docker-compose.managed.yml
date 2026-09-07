@@ -1,0 +1,57 @@
+# Managed PostgreSQL integration harness.
+# This exercises the production adapter boundary but is not a production
+# topology. Use a managed database, secret manager, TLS ingress, recovery
+# process, and site evidence before production review.
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${PDM_POSTGRES_DB:-pdm}
+      POSTGRES_USER: ${PDM_POSTGRES_USER:-pdm}
+      POSTGRES_PASSWORD: ${PDM_POSTGRES_PASSWORD:?Set PDM_POSTGRES_PASSWORD for the managed-state harness}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    volumes:
+      - pdm_managed_postgres:/var/lib/postgresql/data
+
+  migrate:
+    profiles: ["migration"]
+    build: .
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PDM_STATE_BACKEND: managed
+      PDM_MANAGED_STATE_ADAPTER: sqlalchemy
+      PDM_DATABASE_URL: postgresql+psycopg://${PDM_POSTGRES_USER:-pdm}:${PDM_POSTGRES_PASSWORD}@postgres:5432/${PDM_POSTGRES_DB:-pdm}
+    command: ["python", "scripts/managed_state_migrate.py", "--output", "/tmp/managed_state_migrate.json"]
+
+  platform:
+    build: .
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "${PDM_HOST_PORT:-8001}:8000"
+    environment:
+      PDM_AUTH_MODE: local
+      PDM_STATE_BACKEND: managed
+      PDM_MANAGED_STATE_ADAPTER: sqlalchemy
+      PDM_DATABASE_URL: postgresql+psycopg://${PDM_POSTGRES_USER:-pdm}:${PDM_POSTGRES_PASSWORD}@postgres:5432/${PDM_POSTGRES_DB:-pdm}
+      PDM_READINESS_PROBE_DATABASE: "1"
+      PDM_OBSERVABILITY_ENABLED: "1"
+      PDM_RELEASE_ID: "1.0.0"
+      PDM_DEPLOYMENT_ENVIRONMENT: managed-integration-harness
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health/ready')"]
+      interval: 10s
+      timeout: 5s
+      start_period: 20s
+      retries: 6
+
+volumes:
+  pdm_managed_postgres:

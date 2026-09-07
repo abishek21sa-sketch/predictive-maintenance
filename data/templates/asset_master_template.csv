@@ -1,0 +1,3 @@
+asset_id,asset_type,criticality,status,commissioned_at
+M-001,compressor,high,active,2025-01-15
+M-002,compressor,medium,active,2025-02-01

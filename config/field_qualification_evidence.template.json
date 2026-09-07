@@ -1,0 +1,32 @@
+{
+  "schema_version": "PDM-FIELD-QUALIFICATION.v1",
+  "release_id": "REPLACE_WITH_RELEASE_ID",
+  "environment": "REPLACE_WITH_DEPLOYMENT_ENVIRONMENT",
+  "artifact_sha256": "REPLACE_WITH_RELEASE_ARTIFACT_SHA256",
+  "data_fingerprint": "REPLACE_WITH_EVALUATED_DATA_SHA256",
+  "site_id": "REPLACE_WITH_SITE_ID",
+  "study_id": "REPLACE_WITH_FIELD_STUDY_ID",
+  "attested_by": "REPLACE_WITH_QUALIFIED_REVIEWER",
+  "attested_at": "REPLACE_WITH_RFC3339_ATTESTATION_TIME",
+  "observation_start": "REPLACE_WITH_RFC3339_OBSERVATION_START",
+  "observation_end": "REPLACE_WITH_RFC3339_OBSERVATION_END",
+  "qualification_status": "pending",
+  "asset_count": 0,
+  "outcome_count": 0,
+  "follow_up_complete": false,
+  "safety_reviewed": false,
+  "operator_accepted": false,
+  "metrics": {
+    "alert_count": 0,
+    "true_event_count": 0,
+    "false_alert_count": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "false_alert_rate": 0.0
+  },
+  "data_provenance_ref": "https://REPLACE_WITH_DATA_PROVENANCE_RECORD",
+  "outcomes_reconciled_ref": "https://REPLACE_WITH_OUTCOME_RECONCILIATION_RECORD",
+  "safety_review_ref": "https://REPLACE_WITH_SAFETY_REVIEW_RECORD",
+  "operator_acceptance_ref": "https://REPLACE_WITH_OPERATOR_ACCEPTANCE_RECORD",
+  "results_ref": "https://REPLACE_WITH_FIELD_RESULTS_RECORD"
+}

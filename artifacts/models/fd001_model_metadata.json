@@ -1,0 +1,160 @@
+{
+  "dataset": "NASA C-MAPSS FD001",
+  "selected_model": "hist_gradient_boosting",
+  "features": [
+    "cycle",
+    "setting_1",
+    "setting_2",
+    "setting_3",
+    "sensor_01",
+    "sensor_02",
+    "sensor_03",
+    "sensor_04",
+    "sensor_05",
+    "sensor_06",
+    "sensor_07",
+    "sensor_08",
+    "sensor_09",
+    "sensor_10",
+    "sensor_11",
+    "sensor_12",
+    "sensor_13",
+    "sensor_14",
+    "sensor_15",
+    "sensor_16",
+    "sensor_17",
+    "sensor_18",
+    "sensor_19",
+    "sensor_20",
+    "sensor_21",
+    "sensor_01_delta",
+    "sensor_01_roll_mean",
+    "sensor_01_roll_std",
+    "sensor_02_delta",
+    "sensor_02_roll_mean",
+    "sensor_02_roll_std",
+    "sensor_03_delta",
+    "sensor_03_roll_mean",
+    "sensor_03_roll_std",
+    "sensor_04_delta",
+    "sensor_04_roll_mean",
+    "sensor_04_roll_std",
+    "sensor_05_delta",
+    "sensor_05_roll_mean",
+    "sensor_05_roll_std",
+    "sensor_06_delta",
+    "sensor_06_roll_mean",
+    "sensor_06_roll_std",
+    "sensor_07_delta",
+    "sensor_07_roll_mean",
+    "sensor_07_roll_std",
+    "sensor_08_delta",
+    "sensor_08_roll_mean",
+    "sensor_08_roll_std",
+    "sensor_09_delta",
+    "sensor_09_roll_mean",
+    "sensor_09_roll_std",
+    "sensor_10_delta",
+    "sensor_10_roll_mean",
+    "sensor_10_roll_std",
+    "sensor_11_delta",
+    "sensor_11_roll_mean",
+    "sensor_11_roll_std",
+    "sensor_12_delta",
+    "sensor_12_roll_mean",
+    "sensor_12_roll_std",
+    "sensor_13_delta",
+    "sensor_13_roll_mean",
+    "sensor_13_roll_std",
+    "sensor_14_delta",
+    "sensor_14_roll_mean",
+    "sensor_14_roll_std",
+    "sensor_15_delta",
+    "sensor_15_roll_mean",
+    "sensor_15_roll_std",
+    "sensor_16_delta",
+    "sensor_16_roll_mean",
+    "sensor_16_roll_std",
+    "sensor_17_delta",
+    "sensor_17_roll_mean",
+    "sensor_17_roll_std",
+    "sensor_18_delta",
+    "sensor_18_roll_mean",
+    "sensor_18_roll_std",
+    "sensor_19_delta",
+    "sensor_19_roll_mean",
+    "sensor_19_roll_std",
+    "sensor_20_delta",
+    "sensor_20_roll_mean",
+    "sensor_20_roll_std",
+    "sensor_21_delta",
+    "sensor_21_roll_mean",
+    "sensor_21_roll_std"
+  ],
+  "top_features": [
+    {
+      "feature": "cycle",
+      "importance": 8.004601550097561
+    },
+    {
+      "feature": "sensor_11_roll_mean",
+      "importance": 2.9912924137260397
+    },
+    {
+      "feature": "sensor_09_roll_mean",
+      "importance": 2.512131143284826
+    },
+    {
+      "feature": "sensor_04_roll_mean",
+      "importance": 1.836327539844854
+    },
+    {
+      "feature": "sensor_14_roll_mean",
+      "importance": 1.1958536039237462
+    },
+    {
+      "feature": "sensor_15_roll_mean",
+      "importance": 1.1058620104202994
+    },
+    {
+      "feature": "sensor_02_roll_mean",
+      "importance": 0.600326516160159
+    },
+    {
+      "feature": "sensor_03_roll_mean",
+      "importance": 0.5098917103244194
+    },
+    {
+      "feature": "sensor_21_roll_mean",
+      "importance": 0.38474009204168524
+    },
+    {
+      "feature": "sensor_06_roll_std",
+      "importance": 0.34702878416950256
+    },
+    {
+      "feature": "sensor_13_roll_mean",
+      "importance": 0.198545393512072
+    },
+    {
+      "feature": "sensor_12_roll_mean",
+      "importance": 0.18803194965846082
+    }
+  ],
+  "asset_holdout_metrics": {
+    "mae": 9.669682107364816,
+    "rmse": 14.601635565822043,
+    "r2": 0.8780106984693109,
+    "nasa_score": 27343.06993839595
+  },
+  "official_test_metrics": {
+    "mae": 14.173246296617776,
+    "rmse": 19.236538883578387,
+    "r2": 0.7857137399260353,
+    "nasa_score": 735.9326787007708
+  },
+  "seed": 42,
+  "residual_interval_90": 25.981409777266137,
+  "interval_coverage_90": 0.8998361327324866,
+  "uncertainty_method": "asset_holdout_empirical_residual_band_90"
+}

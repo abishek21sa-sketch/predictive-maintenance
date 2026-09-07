@@ -1,0 +1,304 @@
+{
+  "dataset": "NASA C-MAPSS FD001-FD004",
+  "regime_count": 4,
+  "regimes": [
+    {
+      "subset": "FD001",
+      "train_rows": 20631,
+      "test_rows": 13096,
+      "train_units": 100,
+      "test_units": 100,
+      "selected_model": "hist_gradient_boosting",
+      "asset_holdout_metrics": {
+        "mae": 9.669682107364816,
+        "rmse": 14.601635565822043,
+        "r2": 0.8780106984693109,
+        "nasa_score": 27343.06993839595
+      },
+      "official_test_metrics": {
+        "mae": 14.173246296617776,
+        "rmse": 19.236538883578387,
+        "r2": 0.7857137399260353,
+        "nasa_score": 735.9326787007708
+      },
+      "official_test_baseline_metrics": {
+        "mae": 27.585332993075372,
+        "rmse": 33.335540173853424,
+        "r2": 0.35648977856660646,
+        "nasa_score": 5318.920983684369
+      },
+      "official_test_metric_intervals": {
+        "bootstrap_unit": "asset_trajectory",
+        "confidence_level": 0.95,
+        "group_count": 100,
+        "iterations": 1000,
+        "status": "PASS",
+        "intervals": {
+          "mae": {
+            "low": 11.663370340349532,
+            "median": 14.18074314936948,
+            "high": 16.865731414860154
+          },
+          "rmse": {
+            "low": 16.13940079012938,
+            "median": 19.240852738832952,
+            "high": 22.226661342974076
+          },
+          "r2": {
+            "low": 0.7008258878142569,
+            "median": 0.7840115346024058,
+            "high": 0.8536052847169403
+          },
+          "nasa_score": {
+            "low": 418.52321146736836,
+            "median": 715.9588522298901,
+            "high": 1121.327308374111
+          },
+          "interval_coverage": {
+            "low": 0.77,
+            "median": 0.84,
+            "high": 0.91
+          }
+        },
+        "claim_boundary": "Asset-grouped bootstrap intervals quantify benchmark uncertainty; they do not certify field reliability, causal benefit, or calibrated prediction coverage."
+      },
+      "rul_interval_evidence": {
+        "half_width_cycles": 25.981409777266137,
+        "validation_coverage_90": 0.8998361327324866,
+        "official_test_coverage_90": 0.84,
+        "claim_boundary": "Empirical asset-holdout residual coverage is reported for benchmark diagnostics; it is not a formal conformal guarantee or field reliability certification."
+      },
+      "source_checksums": {
+        "train_FD001.txt": "963b5e22825b34d8b21c69e1aeb4af3e647050eb672ee8834ba4b5d91d2de0f8",
+        "test_FD001.txt": "3cda7109ce17bafb5443f2ac926cfcf88154b941b8c4cf95eb55d1ddd6f52851",
+        "RUL_FD001.txt": "a19c8ec94931949d0485bdc35118206e9c81c4547b422efb9cf86f4ceddbceca"
+      }
+    },
+    {
+      "subset": "FD002",
+      "train_rows": 53759,
+      "test_rows": 33991,
+      "train_units": 260,
+      "test_units": 259,
+      "selected_model": "hist_gradient_boosting",
+      "asset_holdout_metrics": {
+        "mae": 12.47860716861936,
+        "rmse": 17.88803840055469,
+        "r2": 0.8156994843997014,
+        "nasa_score": 103925.90330108258
+      },
+      "official_test_metrics": {
+        "mae": 19.846619822260944,
+        "rmse": 28.0096490829633,
+        "r2": 0.7287353419579661,
+        "nasa_score": 10238.591771586332
+      },
+      "official_test_baseline_metrics": {
+        "mae": 33.41081587856222,
+        "rmse": 40.592609491834736,
+        "r2": 0.4302664154379894,
+        "nasa_score": 37756.2577731115
+      },
+      "official_test_metric_intervals": {
+        "bootstrap_unit": "asset_trajectory",
+        "confidence_level": 0.95,
+        "group_count": 259,
+        "iterations": 1000,
+        "status": "PASS",
+        "intervals": {
+          "mae": {
+            "low": 17.56081980344807,
+            "median": 19.876444529410673,
+            "high": 22.207997425181127
+          },
+          "rmse": {
+            "low": 24.735265972123905,
+            "median": 28.07630784269417,
+            "high": 31.147501452079542
+          },
+          "r2": {
+            "low": 0.680209689926483,
+            "median": 0.7275624915185366,
+            "high": 0.7724008433138893
+          },
+          "nasa_score": {
+            "low": 5231.678906507481,
+            "median": 10093.261892839004,
+            "high": 16654.135957638846
+          },
+          "interval_coverage": {
+            "low": 0.7374517374517374,
+            "median": 0.7876447876447876,
+            "high": 0.833976833976834
+          }
+        },
+        "claim_boundary": "Asset-grouped bootstrap intervals quantify benchmark uncertainty; they do not certify field reliability, causal benefit, or calibrated prediction coverage."
+      },
+      "rul_interval_evidence": {
+        "half_width_cycles": 31.764580347526614,
+        "validation_coverage_90": 0.9,
+        "official_test_coverage_90": 0.7876447876447876,
+        "claim_boundary": "Empirical asset-holdout residual coverage is reported for benchmark diagnostics; it is not a formal conformal guarantee or field reliability certification."
+      },
+      "source_checksums": {
+        "train_FD002.txt": "dac6c4dbc4e7c1bdeb5747da3d313d05c395bb99801b44a002b26a2ba13d788f",
+        "test_FD002.txt": "de7b5bf7e998a985c378488480528b7c02cff1406a46740def362dda8d9b4e02",
+        "RUL_FD002.txt": "c851dd96a6ea6998d3c4a8f834d3c8013aa90e93a6ed950dc826ad0655b2906b"
+      }
+    },
+    {
+      "subset": "FD003",
+      "train_rows": 24720,
+      "test_rows": 16596,
+      "train_units": 100,
+      "test_units": 100,
+      "selected_model": "random_forest",
+      "asset_holdout_metrics": {
+        "mae": 9.373890616480342,
+        "rmse": 14.652166002499861,
+        "r2": 0.8724479014906242,
+        "nasa_score": 26342.436491094784
+      },
+      "official_test_metrics": {
+        "mae": 13.660723630745624,
+        "rmse": 18.11876202772807,
+        "r2": 0.8084208699770351,
+        "nasa_score": 669.650571456971
+      },
+      "official_test_baseline_metrics": {
+        "mae": 31.93876677287228,
+        "rmse": 38.16500950201918,
+        "r2": 0.14999416999112625,
+        "nasa_score": 20645.667111834286
+      },
+      "official_test_metric_intervals": {
+        "bootstrap_unit": "asset_trajectory",
+        "confidence_level": 0.95,
+        "group_count": 100,
+        "iterations": 1000,
+        "status": "PASS",
+        "intervals": {
+          "mae": {
+            "low": 11.446387325582752,
+            "median": 13.632481290697525,
+            "high": 16.07489202087321
+          },
+          "rmse": {
+            "low": 15.201052147048822,
+            "median": 18.067793203569988,
+            "high": 20.91610779338137
+          },
+          "r2": {
+            "low": 0.7233613533109402,
+            "median": 0.8046592963532208,
+            "high": 0.8689971378826681
+          },
+          "nasa_score": {
+            "low": 404.3091179711188,
+            "median": 657.2662994135546,
+            "high": 1022.0110528229599
+          },
+          "interval_coverage": {
+            "low": 0.73,
+            "median": 0.81,
+            "high": 0.88
+          }
+        },
+        "claim_boundary": "Asset-grouped bootstrap intervals quantify benchmark uncertainty; they do not certify field reliability, causal benefit, or calibrated prediction coverage."
+      },
+      "rul_interval_evidence": {
+        "half_width_cycles": 25.807675783380773,
+        "validation_coverage_90": 0.9,
+        "official_test_coverage_90": 0.81,
+        "claim_boundary": "Empirical asset-holdout residual coverage is reported for benchmark diagnostics; it is not a formal conformal guarantee or field reliability certification."
+      },
+      "source_checksums": {
+        "train_FD003.txt": "2abbe9968cc5e8eb091980f51b20f62bb4127336d3482cb52071d53bf23329e2",
+        "test_FD003.txt": "299babd63c8d987cef079c4a425429f33b3a34797d803bbe2ad48c29dbd0d790",
+        "RUL_FD003.txt": "df1e0566306b174a2de41c67a3e7a51877889598b78643fc3e5685259091b7cb"
+      }
+    },
+    {
+      "subset": "FD004",
+      "train_rows": 61249,
+      "test_rows": 41214,
+      "train_units": 249,
+      "test_units": 248,
+      "selected_model": "hist_gradient_boosting",
+      "asset_holdout_metrics": {
+        "mae": 11.13192818514293,
+        "rmse": 17.28567103572853,
+        "r2": 0.8163206158349353,
+        "nasa_score": 374619.02419426234
+      },
+      "official_test_metrics": {
+        "mae": 21.90097340445151,
+        "rmse": 28.88189620369404,
+        "r2": 0.7194054175355598,
+        "nasa_score": 5706.093742827314
+      },
+      "official_test_baseline_metrics": {
+        "mae": 41.38308390835143,
+        "rmse": 49.787962523812986,
+        "r2": 0.16617179029389018,
+        "nasa_score": 294976.8890625411
+      },
+      "official_test_metric_intervals": {
+        "bootstrap_unit": "asset_trajectory",
+        "confidence_level": 0.95,
+        "group_count": 248,
+        "iterations": 1000,
+        "status": "PASS",
+        "intervals": {
+          "mae": {
+            "low": 19.60599295447257,
+            "median": 21.963139033538205,
+            "high": 24.228250717944004
+          },
+          "rmse": {
+            "low": 26.280287067914944,
+            "median": 28.956477769332604,
+            "high": 31.61727895715849
+          },
+          "r2": {
+            "low": 0.6682303393360232,
+            "median": 0.7176408170796811,
+            "high": 0.7601908964154729
+          },
+          "nasa_score": {
+            "low": 4303.397806225946,
+            "median": 5728.984742910501,
+            "high": 7437.509082275491
+          },
+          "interval_coverage": {
+            "low": 0.6733870967741935,
+            "median": 0.7338709677419355,
+            "high": 0.7903225806451613
+          }
+        },
+        "claim_boundary": "Asset-grouped bootstrap intervals quantify benchmark uncertainty; they do not certify field reliability, causal benefit, or calibrated prediction coverage."
+      },
+      "rul_interval_evidence": {
+        "half_width_cycles": 28.72789888300924,
+        "validation_coverage_90": 0.8999937063377179,
+        "official_test_coverage_90": 0.7338709677419355,
+        "claim_boundary": "Empirical asset-holdout residual coverage is reported for benchmark diagnostics; it is not a formal conformal guarantee or field reliability certification."
+      },
+      "source_checksums": {
+        "train_FD004.txt": "27ef6160b6a1dcb2613a88de9c239f763b223f02cdc41dc5cdedc5dc189b6218",
+        "test_FD004.txt": "1dc675fff0624bac10786927c6715b37d1297657137400d2b1a3138d777a3ba5",
+        "RUL_FD004.txt": "196b836b85a95ac7fdbbf29c5fdf1657382eafa445644d114ffaaf50dc2975e1"
+      }
+    }
+  ],
+  "aggregate_official_test_metrics_mean": {
+    "mae": 17.395390788518963,
+    "rmse": 23.561711549490948,
+    "r2": 0.760568842349149,
+    "nasa_score": 4337.567191142847
+  },
+  "validation_design": "Each regime is evaluated independently with complete-engine holdout model selection; no row-level random split and no cross-regime metric transfer.",
+  "raw_data_policy": "public benchmark retained locally; raw files excluded from release artifacts",
+  "claim_boundary": "These are public simulated benchmark results across four C-MAPSS regimes. They do not certify MetroPT transfer, field reliability, causal benefit, or production readiness.",
+  "seed": 42
+}

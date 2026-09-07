@@ -1,0 +1,81 @@
+{
+  "phase": 3,
+  "version": "1.0.0",
+  "overall": "PASS",
+  "evidence_class": "SYNTHETIC_VALIDATION_FOR_EXTERNAL_DATA_LIFECYCLE",
+  "checks": {
+    "canonical_ingestion": true,
+    "generic_condition_monitoring_ready": true,
+    "no_silent_fd001_transfer": true,
+    "external_training_ready": true,
+    "content_fingerprint": true,
+    "evidence_boundary_recorded": true,
+    "replay_no_future_rows": true,
+    "replay_all_assets": true,
+    "asset_level_holdout": true,
+    "model_beats_age_baseline": true,
+    "external_inference": true,
+    "external_uncertainty_interval": true,
+    "sql_adapter": true,
+    "sql_source_handle_released": true,
+    "data_gateway_ui": true,
+    "data_modes_api": true
+  },
+  "details": {
+    "external_model": {
+      "model_id": "rul-phase3-generic-pump-fleet-fa-238141205f",
+      "dataset_id": "phase3-generic-pump-fleet-fa7bd69c17",
+      "selected_model": "ridge",
+      "features": [
+        "cycle",
+        "vibration_rms",
+        "bearing_temp",
+        "pressure",
+        "vibration_rms__delta",
+        "vibration_rms__mean5",
+        "vibration_rms__std5",
+        "bearing_temp__delta",
+        "bearing_temp__mean5",
+        "bearing_temp__std5",
+        "pressure__delta",
+        "pressure__mean5",
+        "pressure__std5"
+      ],
+      "validation_assets": [
+        "PUMP-06",
+        "PUMP-08"
+      ],
+      "metrics": {
+        "mae": 0.8682147112532157,
+        "rmse": 1.1668797490666765,
+        "r2": 0.9958517062755016
+      },
+      "baseline_metrics": {
+        "mae": 5.7202726072111485,
+        "rmse": 7.063330377871772,
+        "r2": 0.8480025386690343
+      },
+      "candidate_metrics": {
+        "ridge": {
+          "mae": 0.8682147112532157,
+          "rmse": 1.1668797490666765,
+          "r2": 0.9958517062755016
+        },
+        "random_forest": {
+          "mae": 2.942658602150538,
+          "rmse": 3.7087029860644707,
+          "r2": 0.958095428723193
+        },
+        "hist_gradient_boosting": {
+          "mae": 2.418355925912305,
+          "rmse": 3.0102551337060484,
+          "r2": 0.9723927018649061
+        }
+      },
+      "residual_interval_90": 1.9462550012848383,
+      "interval_coverage_90": 0.8951612903225806,
+      "evidence_class": "VALIDATED_ON_USER_SUPPLIED_HOLDOUT"
+    }
+  },
+  "claim_boundary": "Diagnostic model metrics are synthetic pipeline validation, not field accuracy claims."
+}

@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "archive": "C:\\Users\\babbi\\Documents\\Codex\\predictive_maintenance\\dist\\Predictive_Maintenance_Intelligence_Final.zip",
+  "archive_sha256": "e6396b804bedea8bb0d1e858eca1bac675819ceab66765970c60186c084a3a35",
+  "member_count": 261,
+  "required_members": [
+    "Predictive_Maintenance_Intelligence_Platform/README.md",
+    "Predictive_Maintenance_Intelligence_Platform/RELEASE_MANIFEST.json",
+    "Predictive_Maintenance_Intelligence_Platform/pyproject.toml",
+    "Predictive_Maintenance_Intelligence_Platform/Dockerfile",
+    "Predictive_Maintenance_Intelligence_Platform/docker-compose.managed.yml",
+    "Predictive_Maintenance_Intelligence_Platform/src/pdm_intelligence/api/main.py",
+    "Predictive_Maintenance_Intelligence_Platform/scripts/clean_extract_validate.py",
+    "Predictive_Maintenance_Intelligence_Platform/scripts/managed_state_migrate.py",
+    "Predictive_Maintenance_Intelligence_Platform/scripts/validate_production_manifest.py",
+    "Predictive_Maintenance_Intelligence_Platform/scripts/field_qualification_evidence.py",
+    "Predictive_Maintenance_Intelligence_Platform/config/field_qualification_evidence.template.json",
+    "Predictive_Maintenance_Intelligence_Platform/src/pdm_intelligence/security/field_validation_evidence.py",
+    "Predictive_Maintenance_Intelligence_Platform/deploy/kubernetes/pdm-platform.json",
+    "Predictive_Maintenance_Intelligence_Platform/docs/ENTERPRISE_ACCEPTANCE.md"
+  ],
+  "extracted_required_members": [
+    "Predictive_Maintenance_Intelligence_Platform/README.md",
+    "Predictive_Maintenance_Intelligence_Platform/RELEASE_MANIFEST.json",
+    "Predictive_Maintenance_Intelligence_Platform/pyproject.toml",
+    "Predictive_Maintenance_Intelligence_Platform/Dockerfile",
+    "Predictive_Maintenance_Intelligence_Platform/docker-compose.managed.yml",
+    "Predictive_Maintenance_Intelligence_Platform/src/pdm_intelligence/api/main.py",
+    "Predictive_Maintenance_Intelligence_Platform/scripts/clean_extract_validate.py",
+    "Predictive_Maintenance_Intelligence_Platform/scripts/managed_state_migrate.py",
+    "Predictive_Maintenance_Intelligence_Platform/scripts/validate_production_manifest.py",
+    "Predictive_Maintenance_Intelligence_Platform/scripts/field_qualification_evidence.py",
+    "Predictive_Maintenance_Intelligence_Platform/config/field_qualification_evidence.template.json",
+    "Predictive_Maintenance_Intelligence_Platform/src/pdm_intelligence/security/field_validation_evidence.py",
+    "Predictive_Maintenance_Intelligence_Platform/deploy/kubernetes/pdm-platform.json",
+    "Predictive_Maintenance_Intelligence_Platform/docs/ENTERPRISE_ACCEPTANCE.md"
+  ],
+  "errors": [],
+  "claim_boundary": "This gate verifies release ZIP integrity, package boundaries, and clean extraction only. It does not certify infrastructure, security, availability, model performance, or field safety."
+}

@@ -1,0 +1,49 @@
+{
+  "phase": 5,
+  "overall": "PASS",
+  "evidence_class": "STRUCTURAL_PREFLIGHT_ONLY_NOT_FULL_REAL_DATA_VALIDATION",
+  "checks": {
+    "real_excerpt_parser": true,
+    "real_excerpt_no_missing": true,
+    "missing_runtime_refuses_readiness": true,
+    "no_synthetic_substitute_claim": true,
+    "data_mode_not_ready_without_full_runtime": true,
+    "operations_ui_packaged": true,
+    "methodology_separates_real_track": true,
+    "source_manifest_attribution": true,
+    "raw_metropt_not_packaged": true,
+    "full_acceptance_script_present": true
+  },
+  "real_excerpt": {
+    "row_count": 6,
+    "columns": [
+      "X",
+      "timestamp",
+      "TP2",
+      "TP3",
+      "H1",
+      "DV_pressure",
+      "Reservoirs",
+      "Oil_temperature",
+      "Motor_current",
+      "COMP",
+      "DV_eletric",
+      "Towers",
+      "MPG",
+      "LPS",
+      "Pressure_switch",
+      "Oil_level",
+      "Caudal_impulses"
+    ],
+    "first_timestamp": "2020-02-01 00:00:00",
+    "last_timestamp": "2020-02-01 00:00:49",
+    "missing_values": 0,
+    "index_column": "X",
+    "source_sha256": "5caf4f4c4e6a8c1b366b0b85701e4cbe4ecbe0e5080d9317d6dcf674654f1956",
+    "file_size_bytes": 658,
+    "actual_sampling_median_seconds": 0.01
+  },
+  "raw_metropt_files_packaged": [],
+  "local_metropt_raw_present": true,
+  "claim_boundary": "This preflight validates parser, packaging, readiness refusal and product wiring only. Full MetroPT-3 model evidence requires the complete UCI source on the Windows acceptance runtime."
+}

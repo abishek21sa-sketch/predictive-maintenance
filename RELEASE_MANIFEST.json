@@ -1,0 +1,117 @@
+{
+  "ai": {
+    "asset_level_holdout": true,
+    "external_model_lifecycle": true,
+    "fd001_age_baseline_rmse": 33.34,
+    "fd001_mae": 14.17,
+    "fd001_r2": 0.786,
+    "fd001_rmse": 19.24,
+    "fd001_selected_model": "hist_gradient_boosting"
+  },
+  "claim_boundary": "Benchmark, predicted, calculated, optimized and simulated evidence is separated; no realized field savings, certified aircraft safety, universal equipment transfer, or prospective production performance is claimed.",
+  "external_data_modes": [
+    "bundled_benchmark",
+    "browser_csv_json_jsonl_ndjson",
+    "server_file_csv_json_parquet_optional",
+    "sqlalchemy_database",
+    "historical_replay"
+  ],
+  "cmms_erp_integration": {
+    "contract_versions": ["CMMS-WORK-ORDER.v1", "CMMS-INVENTORY.v1"],
+    "canonical_work_order_mirror": "cmms_work_orders",
+    "canonical_inventory_mirror": "cmms_inventory",
+    "inventory_available_formula": "on_hand - reserved",
+    "idempotent_reconciliation": true,
+    "monotonic_revision_policy": true,
+    "safe_jsonl_export": true,
+    "export_content_sha256": true,
+    "audit_linkage": true,
+    "atomic_mirror_audit_commit": true,
+    "acceptance_artifact": "artifacts/cmms_erp_acceptance.json",
+    "reference_implementation_status": "PASS / Windows Python 3.13 CMMS acceptance",
+    "production_connector_status": "SITE_SPECIFIC_DEPLOYMENT_REQUIRED"
+  },
+  "enterprise_acceptance": {
+    "command": "scripts/enterprise_acceptance.py",
+    "windows_wrapper": "scripts/enterprise_acceptance.ps1",
+    "lanes": 10,
+    "reference_status": "IMPLEMENTED_AND_TESTED",
+    "production_certification_status": "EXTERNAL_EVIDENCE_REQUIRED"
+  },
+  "operations_research": {
+    "choices": [
+      "maintain",
+      "inspect",
+      "defer where allowed"
+    ],
+    "ci_solver": "SciPy/HiGHS MILP",
+    "exact_oracle_verified": true,
+    "gurobi_iis_on_infeasibility": true,
+    "objective": "expected modeled lifecycle cost + risk_aversion * CVaR_alpha",
+    "primary_solver": "Gurobi when licensed runtime is available",
+    "robust_capacity_profiles": [
+      "baseline",
+      "bay_and_crew_stress"
+    ]
+  },
+  "package_version": "1.0.0",
+  "raw_metropt_data_packaged": false,
+  "raw_nasa_data_packaged": false,
+  "real_operational_data": {
+    "dataset": "MetroPT-3 Air Production Unit",
+    "expected_rows": 1516948,
+    "full_source_status": "PRESENT_LOCALLY / MODEL_HOLDOUT_QUALITY_GATE_FAILED",
+    "model_target": "24-hour failure horizon derived from published company failure windows; no fabricated row-level RUL",
+    "raw_data_packaged": false,
+    "source_signals": 15,
+    "uci_id": 791,
+    "validation_design": "chronological development/validation/future holdout; no shuffle"
+  },
+  "release": "1.0.0",
+  "release_boundary": "Pre-public V1 release candidate with benchmark, generic external-data, real historical operations, and CMMS/ERP reference exchange paths; live site connectors and prospective field validation remain external deployment work",
+  "signature_product": "Reliability Observatory + Data Gateway + Reliability Shock Lab + Real Operations Command",
+  "stress_simulation": {
+    "method": "seeded Monte Carlo with common random numbers",
+    "policies": [
+      "optimized_intervention",
+      "earliest_rul_heuristic",
+      "run_to_failure"
+    ]
+  },
+  "validation": {
+    "automated_tests": "PASS / Windows Python 3.13 / full regression suite",
+    "final_windows_v1_acceptance": "PASS / Windows Python 3.13 / V1_RELEASE_ACCEPTANCE_PASS",
+    "performance_sanity": "PASS",
+    "phase1_ai_ie_or_simulation": "PASS",
+    "phase2_planner_regression": "PASS",
+    "phase2b_case_regression": "PASS",
+    "phase2c_observatory_regression": "PASS",
+    "phase3_real_data_model_lifecycle": "PASS",
+    "phase4_cvar_or_stress": "PASS",
+    "phase5_full_metropt3_real_operations": "FAIL / Windows Python 3.13 / holdout average precision below prevalence baseline",
+    "phase5_structural_preflight": "PASS",
+    "prior_windows_gurobi_phase4": "PASS / OPTIMAL / MIP gap 0.0",
+    "python_compile": "PASS",
+    "release_security_audit": "PASS",
+    "production_readiness_gate": "IMPLEMENTED_AND_TESTED / reference configuration correctly NOT_READY; seven deployment controls plus release-bound prospective field qualification",
+    "deployment_evidence_attestation": "IMPLEMENTED_AND_TESTED / non-secret seven-control attestation and digest",
+    "field_qualification_evidence": "IMPLEMENTED_AND_TESTED / release-bound non-secret attestation with data fingerprint, completed follow-up, safety review and operator acceptance",
+    "model_quality_evidence_binding": "IMPLEMENTED_AND_TESTED / Phase 5 diagnostics are SHA-256 bound to the trusted MetroPT runtime manifest",
+    "synthetic_development_fixture": "IMPLEMENTED_AND_TESTED / deterministic 200,000+ row canonical fixture with explicit SYNTHETIC_TEST_ONLY boundary and promotion disabled",
+    "runtime_observability": "IMPLEMENTED_AND_TESTED / request correlation, security headers, authenticated metrics",
+    "model_governance": "IMPLEMENTED_AND_TESTED / versioned RMSE+MAE holdout gate, independent-asset coverage, leakage declaration, hash recheck, and human promotion boundary",
+    "managed_state_preflight": "IMPLEMENTED_AND_TESTED / explicit managed PostgreSQL SQLAlchemy adapter, bounded connectivity and all-store schema check",
+    "managed_container_boundary": "IMPLEMENTED_AND_TESTED / managed driver image, PostgreSQL Compose harness, parameterized password and runtime readiness healthcheck",
+    "managed_schema_readiness": "IMPLEMENTED_AND_TESTED / explicit one-shot migration profile, migration ledger and append-only audit-guard verification before managed readiness",
+    "production_mode_readiness": "IMPLEMENTED_AND_TESTED / PDM_AUTH_MODE=production automatically enforces the deployment gate",
+    "clean_extraction_validation": "IMPLEMENTED_AND_TESTED / release ZIP CRC, safe paths, boundary exclusions, required files, and temporary extraction",
+    "production_topology_template": "IMPLEMENTED_AND_TESTED / restricted Kubernetes topology, suspended explicit migration Job, secret references, probes, TLS ingress, rollout, disruption, and network policy",
+    "metropt_anomaly_evidence": "IMPLEMENTED_AND_TESTED / separate reference-deviation ranking metrics",
+    "metropt_candidate_benchmark": "IMPLEMENTED_AND_TESTED / leakage-safe exploratory candidate report retained as non-raw evidence",
+    "backup_restore_tool": "IMPLEMENTED_AND_TESTED / local SQLite integrity and round-trip verification",
+    "load_smoke_tool": "IMPLEMENTED_AND_TESTED / bounded concurrent HTTP smoke harness",
+    "v1_integration": "PASS / Windows Python 3.13 / V1_RELEASE_ACCEPTANCE_PASS",
+    "cmms_erp_integration": "PASS / Windows Python 3.13 / 13 tests"
+  },
+  "wheel_sha256": "ed0956b7815e9d4a0ddc4f7f0deab21e00baed131820f3f93d852e71f27a1368"
+}

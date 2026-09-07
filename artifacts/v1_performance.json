@@ -1,0 +1,18 @@
+{
+  "release": "1.0.0",
+  "overall": "PASS",
+  "evidence_class": "PERFORMANCE_SANITY_NOT_CAPACITY_CERTIFICATION",
+  "checks": {
+    "plan_under_15_seconds": true,
+    "stress_80_under_30_seconds": true,
+    "plan_optimal": true,
+    "stress_three_policies": true
+  },
+  "timings_seconds": {
+    "decision_plan": 0.5689048999993247,
+    "stress_test_80": 0.46937379999872064
+  },
+  "asset_count": 100,
+  "solver": "scipy_highs_milp",
+  "claim_boundary": "Timings are local release sanity measurements, not production SLA guarantees."
+}

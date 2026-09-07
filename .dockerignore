@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+dist/
+build/
+data/raw/
+data/external/
+data/external_models/
+*.db
+*.lic
+*.pem
+*.key
+.env
+.env.managed

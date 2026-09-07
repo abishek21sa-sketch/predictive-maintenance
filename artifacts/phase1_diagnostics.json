@@ -1,0 +1,60 @@
+{
+  "phase": 1,
+  "overall": "PASS",
+  "checks": {
+    "ai_rul": {
+      "status": "PASS",
+      "evidence_class": "VALIDATED_ON_SYNTHETIC_BENCHMARK",
+      "selected_model": "hist_gradient_boosting",
+      "rmse": 6.203371039909952,
+      "baseline_rmse": 8.467857127112447,
+      "r2": 0.9215633268345764,
+      "residual_interval_90": 9.808855388860199,
+      "empirical_interval_coverage": 0.8986486486486487
+    },
+    "ie_reliability_math": {
+      "status": "PASS",
+      "evidence_class": "MATHEMATICALLY_VERIFIED",
+      "availability": 0.9285714285714286,
+      "weibull_shape": 6.684477911664249,
+      "weibull_scale": 139.4910331905409,
+      "economics_expected_total_cost": 14750.0
+    },
+    "or_schedule": {
+      "status": "PASS",
+      "evidence_class": "OPTIMIZATION_VERIFIED_AGAINST_EXACT_ORACLE",
+      "solver": "scipy_highs_milp",
+      "solver_status": "OPTIMAL",
+      "objective": 105146.46839828514,
+      "enumeration_objective": 105146.46839828514,
+      "mip_gap": 0.0
+    },
+    "simulation": {
+      "status": "PASS",
+      "evidence_class": "SIMULATION_REPRODUCIBILITY_VERIFIED",
+      "seed": 991,
+      "results": [
+        {
+          "policy": "run_to_failure",
+          "expected_total_cost": 111851.55981807581,
+          "expected_failures": 3.0,
+          "expected_downtime_cycles": 18.20963318172985,
+          "preventive_actions": 0.0
+        },
+        {
+          "policy": "predictive",
+          "expected_total_cost": 19896.706907069536,
+          "expected_failures": 0.041666666666666664,
+          "expected_downtime_cycles": 3.212533533669057,
+          "preventive_actions": 2.9583333333333335
+        }
+      ]
+    },
+    "gurobi_runtime": {
+      "status": "AVAILABLE",
+      "evidence_class": "EXTERNAL_RUNTIME_CHECK",
+      "required_for_phase1_build_validation": false,
+      "required_for_final_primary_solver_acceptance": true
+    }
+  }
+}

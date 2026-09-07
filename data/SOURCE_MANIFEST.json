@@ -1,0 +1,40 @@
+{
+  "canonical_dataset": "NASA C-MAPSS Jet Engine Simulated Data",
+  "canonical_source": "https://data.nasa.gov/dataset/cmapss-jet-engine-simulated-data",
+  "official_legacy_resource": "https://data.nasa.gov/docs/legacy/CMAPSSData.zip",
+  "validation_retrieval_mirror": "https://github.com/edwardzjl/CMAPSSData",
+  "subset": "FD001",
+  "train_rows": 20631,
+  "test_rows": 13096,
+  "train_units": 100,
+  "test_units": 100,
+  "checksums": {
+    "train_FD001.txt": "963b5e22825b34d8b21c69e1aeb4af3e647050eb672ee8834ba4b5d91d2de0f8",
+    "test_FD001.txt": "3cda7109ce17bafb5443f2ac926cfcf88154b941b8c4cf95eb55d1ddd6f52851",
+    "RUL_FD001.txt": "a19c8ec94931949d0485bdc35118206e9c81c4547b422efb9cf86f4ceddbceca"
+  },
+  "raw_data_packaged": false,
+  "reason": "Raw benchmark files are intentionally not redistributed; use scripts/download_cmapss.py to retrieve the canonical NASA resource.",
+  "sources": [
+    {
+      "dataset": "NASA C-MAPSS Jet Engine Simulated Data",
+      "subset": "FD001",
+      "evidence_class": "SIMULATED_RUL_BENCHMARK",
+      "source": "https://data.nasa.gov/dataset/cmapss-jet-engine-simulated-data",
+      "raw_data_packaged": false
+    },
+    {
+      "dataset": "MetroPT-3 Dataset",
+      "uci_id": 791,
+      "doi": "10.24432/C5VW3R",
+      "source": "https://archive.ics.uci.edu/dataset/791/metropt%2B3%2B",
+      "download": "https://archive.ics.uci.edu/static/public/791/metropt%2B3%2Bdataset.zip",
+      "license": "CC BY 4.0",
+      "expected_instances": 1516948,
+      "sensor_features": 15,
+      "evidence_class": "REAL_OPERATIONAL_TELEMETRY_AFTER_LOCAL_ACCEPTANCE",
+      "raw_data_packaged": false,
+      "reason": "Raw MetroPT-3 is acquired and validated locally by scripts/prepare_metropt3.py and remains gitignored."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "status": "INVALID",
+  "evidence_class": "PROSPECTIVE_FIELD_QUALIFICATION_ATTESTATION_NOT_CERTIFICATION",
+  "release_id": "REPLACE_WITH_RELEASE_ID",
+  "environment": "REPLACE_WITH_DEPLOYMENT_ENVIRONMENT",
+  "site_id": "REPLACE_WITH_SITE_ID",
+  "study_id": "REPLACE_WITH_FIELD_STUDY_ID",
+  "artifact_sha256": "REPLACE_WITH_RELEASE_ARTIFACT_SHA256",
+  "qualification_status": "pending",
+  "errors": [
+    "invalid_artifact_sha256",
+    "invalid_data_fingerprint",
+    "qualification_not_accepted",
+    "invalid_attested_at_timestamp",
+    "invalid_observation_start_timestamp",
+    "invalid_observation_end_timestamp",
+    "invalid_asset_count_range",
+    "invalid_outcome_count_range",
+    "follow_up_not_complete",
+    "safety_review_not_confirmed",
+    "operator_acceptance_not_confirmed",
+    "invalid_metrics_alert_count_range",
+    "missing_evidence_digest"
+  ],
+  "evidence_digest": "c08c2f00a2027e44351e9039051b2bbfe30d5e346b055a99eaaba399be760aaf",
+  "timestamp_policy": "RFC3339 with timezone; evidence must be no older than 180 days",
+  "claim_boundary": "This is a non-secret, release-bound field-qualification attestation. It does not certify infrastructure, cybersecurity, availability, regulatory compliance, model performance, or field safety.",
+  "path_configured": true
+}
