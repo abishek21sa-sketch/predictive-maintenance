@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/methodology", "destination": "/methodology.html" },
+    { "source": "/data-gateway", "destination": "/data_gateway.html" },
+    { "source": "/stress-lab", "destination": "/stress_lab.html" },
+    { "source": "/operations", "destination": "/operations.html" },
+    { "source": "/belief-maint", "destination": "/belief_maint.html" }
+  ],
+  "cleanUrls": true
+}

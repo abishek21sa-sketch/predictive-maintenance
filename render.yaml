@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: predictive-maintenance-intelligence-api
+    runtime: python
+    plan: free
+    buildCommand: pip install '.[managed]'
+    startCommand: uvicorn pdm_intelligence.api.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health/ready
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.3
+      - key: PDM_AUTH_MODE
+        value: local
+      - key: PDM_STATE_BACKEND
+        value: sqlite
+      - key: PDM_STATE_DB
+        value: /tmp/pdm.db
+      - key: PDM_EXTERNAL_DATA_ROOT
+        value: data/external
+      - key: PDM_EXTERNAL_MODEL_ROOT
+        value: data/external_models
+      - key: PDM_CORS_ORIGINS
+        value: "*"
+

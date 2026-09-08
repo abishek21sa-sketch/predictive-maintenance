@@ -13,6 +13,7 @@ from typing import Literal
 
 import pandas as pd
 from fastapi import Depends, FastAPI, HTTPException, Request, Response
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse, PlainTextResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ConfigDict, Field
@@ -104,6 +105,18 @@ app = FastAPI(
     title="Predictive Maintenance Intelligence API",
     version=__version__,
     description="Reliability, prognostics and maintenance decision intelligence service",
+)
+
+# Vercel hosts the static observatory while Render hosts this API. Keep the
+# browser boundary explicit and configurable; credentials are never sent by
+# the static client, so wildcard is safe for the reference deployment.
+_cors_origins = [x.strip() for x in os.getenv("PDM_CORS_ORIGINS", "*").split(",") if x.strip()]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=_cors_origins,
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 

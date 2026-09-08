@@ -1,5 +1,15 @@
 # Predictive Maintenance Intelligence Platform
 
+## Deployment
+
+Deploy `src/pdm_intelligence/frontend/` as a static Vercel project. Its shared
+`config.js` routes `/api/*` calls to the Render service declared in
+`render.yaml`; override `window.__PDM_API_BASE__` for previews or local
+environments. Deploy the repository root as a Render Blueprint and verify
+`/api/health/ready` before opening the Vercel URL. The reference deployment
+uses local-mode SQLite on Render; production state should move to the managed
+PostgreSQL adapter before enabling strict authentication.
+
 **Release:** `1.0.0`  
 **Signature product:** **Reliability Observatory + Real Operations Command + Data Gateway + Reliability Shock Lab**
 
