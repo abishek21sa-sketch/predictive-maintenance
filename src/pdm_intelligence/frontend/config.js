@@ -1,6 +1,6 @@
 // Shared browser boundary for the Vercel static observatory. The local
 // Render-served pages still work because only absolute /api paths are routed.
-window.__PDM_API_BASE__ = (window.__PDM_API_BASE__ || 'https://predictive-maintenance-intelligence-api.onrender.com').replace(/\/$/, '');
+window.__PDM_API_BASE__ = (window.__PDM_API_BASE__ || ((location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? '' : 'https://predictive-maintenance-intelligence-api.onrender.com')).replace(/\/$/, '');
 const _pdmFetch = window.fetch.bind(window);
 window.fetch = (input, init) => {
   const url = typeof input === 'string' ? input : input.url;
@@ -10,4 +10,3 @@ window.fetch = (input, init) => {
   }
   return _pdmFetch(input, init);
 };
-
